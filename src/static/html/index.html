@@ -140,8 +140,8 @@
         </ul>
     </div>
 </nav>
-
-<div class="container">
+<!--Search box-->
+<div class="container" style="padding-bottom: -100%">
     <div class="wrapHome">
         <div class="searchHome">
             <input type="text" class="searchTermHome" placeholder="What are you looking for?">
@@ -151,53 +151,81 @@
         </div>
 
 
-            <div class="row" style="padding-top: 2%">
-                <div class="col-sm-1" style="padding-left:4%; padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">All</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Proteins</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 120px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Publications</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Author</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Question</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Project</span>
-                        </label>
-                    </div>
+        <div class="row hide-item" style="padding-top: 2%">
+            <div class="col-sm-1" style="padding-left:4%; padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">All</span>
+                    </label>
                 </div>
             </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Proteins</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 120px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Publications</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Author</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Question</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Project</span>
+                    </label>
+                </div>
+            </div>
+        </div>
 
     </div>
+</div>
 
+<div class="container" >
+    <div class="ask">
+        <div class="row">
+            <div class="col-sm-1 hide-item">
+                <img src="../imgs/avatar.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="col-sm-11">
+                <a class="avatar-name" href="#">Frederico Gratinad</a>
+                <br>
+                <span class="avatar-workplace">University of Aveiro - Biology Master Degree</span>
+            </div>
+
+        </div>
+        <div class="row"  style="padding-left: 5%; padding-top: 3%">
+            <input  type="text" class="question-text" placeholder="Ask a Question!">
+        </div>
+        <div class="row" style="padding-left: 5%; padding-top: 3%">
+            <div class="col-sm-9">
+                <input type="text" class="tag-text" placeholder="➕ add tag" style="width: 12%">
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="submit-question">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
