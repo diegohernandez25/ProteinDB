@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="645b1e30-41cf-4205-8834-a6a8948b091c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/html/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/navbar.html" afterDir="false" />
+=======
+>>>>>>> Diego
       <change beforePath="$PROJECT_DIR$/../../test/vue_tutorial/src/components/Tutorial.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/vue_tutorial/src/components/Tutorial.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../test/vue_tutorial/src/components/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/vue_tutorial/src/components/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../test/vue_tutorial/src/router/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/vue_tutorial/src/router/variables.js" afterDir="false" />
@@ -22,11 +25,36 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="765">
               <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+            <state relative-caret-position="114">
+              <caret line="96" column="6" lean-forward="true" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#nav#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> Diego
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/css/notifications.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2204">
+              <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/css/checkbox.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -34,8 +62,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/notifications.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2204">
-              <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            <state relative-caret-position="266">
+              <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+>>>>>>> Diego
             </state>
           </provider>
         </entry>
@@ -43,8 +72,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/navbar.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="931">
               <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+=======
+            <state relative-caret-position="627">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+>>>>>>> Diego
             </state>
           </provider>
         </entry>
@@ -60,6 +94,14 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>body</find>
+    </findStrings>
+  </component>
+>>>>>>> Diego
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -70,6 +112,7 @@
         <option value="$PROJECT_DIR$/css/mystyle.css" />
         <option value="$PROJECT_DIR$/css/Notifications.css" />
         <option value="$PROJECT_DIR$/css/notifications.css" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/css/navbar.css" />
         <option value="$PROJECT_DIR$/html/navbar.html" />
       </list>
@@ -83,13 +126,24 @@
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+=======
+        <option value="$PROJECT_DIR$/css/checkbox.css" />
+        <option value="$PROJECT_DIR$/html/navbar.html" />
+        <option value="$PROJECT_DIR$/css/navbar.css" />
+>>>>>>> Diego
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="1680" />
     <option name="y" value="135" />
     <option name="width" value="1440" />
+=======
+    <option name="x" value="187" />
+    <option name="y" value="1306" />
+    <option name="width" value="1430" />
+>>>>>>> Diego
     <option name="height" value="810" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -161,11 +215,18 @@
       <workItem from="1557417740298" duration="85000" />
       <workItem from="1557438629683" duration="2424000" />
       <workItem from="1557444148270" duration="3284000" />
+<<<<<<< HEAD
       <workItem from="1557493084393" duration="363000" />
+=======
+      <workItem from="1557493084393" duration="1562000" />
+      <workItem from="1557504583261" duration="2464000" />
+      <workItem from="1557581555729" duration="2659000" />
+>>>>>>> Diego
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="6156000" />
   </component>
   <component name="ToolWindowManager">
@@ -173,6 +234,15 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12351672" />
+=======
+    <option name="totallyTimeSpent" value="12478000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="43" y="1105" width="1877" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1262136" />
+>>>>>>> Diego
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -199,6 +269,7 @@
     <entry file="file://$PROJECT_DIR$/js/navbar.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/html/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -213,13 +284,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2204">
           <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+=======
+    <entry file="file://$PROJECT_DIR$/css/notifications.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/checkbox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+>>>>>>> Diego
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/navbar.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="931">
           <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+=======
+        <state relative-caret-position="627">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="96" column="6" lean-forward="true" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> Diego
         </state>
       </provider>
     </entry>
