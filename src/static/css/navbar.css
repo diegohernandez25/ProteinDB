@@ -57,6 +57,7 @@ body{
     height: 36px;
     border: 1px solid #00B4CC;
     background: #00B4CC;
+    border-left: none;
     text-align: center;
     color: #fff;
     border-radius: 5px 5px 5px 5px;

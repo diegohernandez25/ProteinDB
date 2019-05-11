@@ -60,8 +60,37 @@ body{
     background: #00B4CC;
     text-align: center;
     color: #fff;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 15px 15px 15px 15px;
     cursor: pointer;
     font-size: 25px;
 
+}
+
+.home-question-ans
+{   width: 90%;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    border: 3px solid #00B4CC;
+
+}
+
+.home-question-ans .question-tabs
+{   color: grey; !important
+    font-family: 'Baloo Bhai', cursive; !important;
+    font-size: 30px;
+    padding-top: 2%;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.avatar-name-ans{
+    color: grey; !important
+    font-family: 'Baloo Bhai', cursive; !important;
+    font-size: 22px;
+    padding-top: 2%;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.ans-date{
+    color: grey; !important
+    font-size:30px;
 }
