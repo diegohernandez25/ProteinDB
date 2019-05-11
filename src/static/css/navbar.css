@@ -5,6 +5,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.navbar-body{
+    color:#f2f2f2;
+}
+
 .search {
     width: 100%;
     position: relative;
@@ -57,4 +61,10 @@ img{
     .hide-item {
         display: none !important;
     }
+}
+
+.my-navbar-brand{
+    color: grey; !important
+    font-family: 'Baloo Bhai', cursive; !important;
+    font-size: 30px;
 }
