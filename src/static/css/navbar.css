@@ -109,6 +109,12 @@ img{
     }
 }
 
+@media screen and (max-width: 2024px) {
+    .increment-col {
+        width: 50%;
+    }
+}
+
 
 
 .my-navbar-brand{

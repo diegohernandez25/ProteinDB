@@ -1,0 +1,62 @@
+.filter-section{
+    background-color: white;
+    padding: 15px;
+    border-radius: 25px 25px 25px 25px;
+    border: 3px solid #00B4CC;
+}
+
+.result-section{
+
+}
+
+
+.filter-label{
+    color: grey; !important
+    font-family: 'Baloo Bhai', cursive; !important;
+    font-size: 30px;
+}
+
+
+.filter-buttons{
+    background-color: #00B4CC;
+    color:white;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.search-container{
+    background-color: #eee;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.protein-img{
+    height: 90%;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #00B4CC;
+}
+
+.protein-content
+{   color: grey; !important
+    font-size: 15px;
+    padding-top: 2%;
+}
+
+.protein-tag{
+    border-radius: 15px 15px 15px 15px;
+    border: 3px solid #00B4CC;
+    margin-top: 5px;
+    margin-right: 3px;
+    padding: 5px;
+    background-color: #00B4CC;
+    color: white;
+}
+
+.filter-container{
+    margin-top: 10px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
