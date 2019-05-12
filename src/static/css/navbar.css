@@ -104,13 +104,19 @@ img{
     .hide-item {
         display: none !important;
     }
+    .show-item {
+        display: block !important;
+    }
 }
+
+
 
 .my-navbar-brand{
     color: grey; !important
     font-family: 'Baloo Bhai', cursive; !important;
     font-size: 30px;
 }
+
 
 
 
