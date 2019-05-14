@@ -1,0 +1,129 @@
+.screen{
+    display: flex;
+    justify-content:center;
+}
+
+.main-content{
+    flex-basis: 80%;
+
+}
+
+.grey-button{
+    border-color:#4C4C4C;
+    background-color: #4C4C4C;
+}
+
+
+.project-info{
+    display:flex;
+    flex-direction: column;
+}
+
+.project-info-header{
+    display:flex;
+}
+
+.listAssProts{
+    display: flex;
+}
+
+.list-users{
+    display:flex;
+}
+.project-info-persons > div{
+    margin: 20px 30px 50px 0 ;
+}
+
+.user > *{
+    display:block;
+    margin:0 6px;
+    text-align: center;
+}
+
+.prot-btn{
+  margin: 10px 10px 10px 0
+}
+
+.side-edit-btn{
+  margin: 10px 0 10px 10px
+}
+
+.user> img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #00B4CC;
+}
+
+
+.project-info-persons{
+    display: flex;
+}
+
+.listAssProts > .btn{
+
+}
+
+.add-ac{
+    margin: 10px 0;
+    flex:0;
+    max-width:20%;
+}
+
+.item{
+    border-radius: 15px 15px 15px 15px;
+    background: white;
+    border: 3px solid #00B4CC;
+    border-radius: 5px;
+    flex:1;
+    margin: 2% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px;
+ }
+
+ .item-head{
+     display: flex;
+
+ }
+
+ .item-head > :first-child {flex-grow:1;}
+ .item-head > *{flex-grow:1;}
+
+.prev-next{
+  display: flex;
+  flex-direction: row-reverse;;
+}
+
+ .filter-row{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+.filter-row > :first-child{
+    margin-left: 2%;
+}
+
+.filter-row > *{
+    border-radius: 15px;
+    border: 2px solid #00B4CC;
+    padding: 0 10px;
+    flex: 0;
+    flex-basis:20%;
+}
+
+.date  {
+  flex-grow: 1;
+  position:relative;
+}
+
+.date > p {
+  float:right;
+  position:absolute;
+  bottom:0;
+  right: 0;
+}

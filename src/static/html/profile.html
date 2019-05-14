@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <!-- navbar brand font-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+    <!-- tabs font -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/indextabs.css">
+    <link rel="stylesheet" type="text/css" href="../css/arrowindexbutton.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
+
+    <script type="text/javascript" src="../js/indextabs.js"></script>
+    <script type="text/javascript" src="../js/indexarrowbutton.js"></script>
+    <script type="text/javascript" src="../js/vote-buttons.js"></script>
+
+    <!-- navbar brand font-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+    <!-- tabs font -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!--<a class="navbar-brand text-style" style="padding-top: 2%" href="#">ProteinDB</a>-->
+        <a class="my-navbar-brand" style="color: #4C4C4C;padding-top: 2%; font-family: 'Baloo Bhai', cursive;">ProteinDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" style="padding-top: 2%" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+                <div class="wrap">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown" style="color: #4C4C4C;">
+                    <a style="color: #4C4C4C" class="nav-link dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i style="font-size:20px;" class="fa fa-bell">
+                            <span class="badge badge-info" >11</span>
+                        </i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown07">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #4C4C4C" href="#">
+                        Sign out
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" style="color: #4C4C4C" href="#">
+                        Profile
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light non-cellphone hide-item">
+    <div class="wrap">
+        <ul class="navbar-nav mr-auto" style="padding-left: 2%">
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">All</span>
+                    </label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Proteins</span>
+                    </label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Publications</span>
+                    </label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Author</span>
+                    </label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Question</span>
+                    </label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Project</span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--Search box-->
+<div class="container show-item" style="display:none;padding-bottom: -100%">
+    <div class="wrapHome">
+        <div class="searchHome">
+            <input type="text" class="searchTermHome" placeholder="What are you looking for?">
+            <button type="submit" class="searchButtonHome">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+
+
+        <div class="row hide-item" style="padding-top: 2%">
+            <div class="col-sm-1" style="padding-left:4%; padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">All</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Proteins</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 120px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Publications</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Author</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Question</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1" style="padding-right: 10%">
+                <div class="form-check">
+                    <label style="width: 100px">
+                        <input type="checkbox" name="check" checked> <span class="label-text">Project</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class=screen>
+
+    <div class=main-content>
+        <div class=profile-info>
+            <div class=profile-img >
+                <img src="../imgs/profile.jpg" alt="">
+            </div>
+            <div class=info-container>
+                <h1 style="font-family: 'Baloo Bhai'">Profile name</h1>
+                <div class=info-uni>
+                    <i class="fas fa-university"></i> <b>University:</b>
+                </div>
+                <div class=info-job>
+                    <i class="fas fa-user-tie"></i> <b>Job:</b>
+                </div>
+                <div class=description>
+                    <i class="far fa-file-alt"></i> <b>Description:</b>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class=profile-edit>
+                    <button type="button" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class=nav-button-row>
+            <button type="button" class="btn btn-primary myactive">Primary</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+         </div>
+
+        <div class=filter-row>
+                <select>
+                        <option value="volvo">Recent</option>
+                        <option value="saab">Older</option>
+                </select>
+                <input type="text" name="Search" placeholder="Search"><br>
+        </div>
+
+        <div class=result-list>
+                <div class="result-item">
+                        <div>
+                            <h2> Name of the Project</h2>
+                            <div>
+                                    (n) <i class="fas fa-star" style="color: rgba(255, 217, 0, 0.993);"></i>
+                                </div>
+                                <div>
+                                    (n) Updates
+                                </div>
+                                <div>
+                                    (n) Articles
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                        </div>
+                        <div>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="item-attributes">
+                                <b>Project Manager:</b> name <br>
+                                <b>Institute:</b> name
+                        </div>
+                </div>
+
+
+                <div class="result-item">
+                        <div>
+                            <h2> Name of the Project</h2>
+                            <div>
+                                    (n) <i class="fas fa-star" style="color: rgba(255, 217, 0, 0.993);"></i>
+                                </div>
+                                <div>
+                                    (n) Updates
+                                </div>
+                                <div>
+                                    (n) Articles
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                        </div>
+                        <div>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="item-attributes">
+                                <b>Project Manager:</b> name <br>
+                                <b>Institute:</b> name
+                        </div>
+                </div>
+
+
+        </div>
+
+        <div class="prev-next">
+          <button type="button" class="btn btn-primary grey-button side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+          <button type="button" class="btn btn-primary grey-button side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+        </div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
