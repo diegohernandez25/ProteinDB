@@ -17,8 +17,7 @@ body{
 }
 
 .searchHome{
-    width: 100%;
-    padding-top: 10%;
+    width: 120%;
     align-content: center;
     position: relative;
     display: flex;
@@ -93,6 +92,12 @@ body{
     padding-top:10%;
     left: 60%;
     transform: translate(-50%, -50%);
+}
+
+.wrapHomeCellPhone{
+    position: relative;
+    margin-left: 5%;
+    padding-top:10%;
 }
 img{
     width: 5%;

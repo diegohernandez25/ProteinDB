@@ -18,10 +18,10 @@ body{
 /*Ask question*/
 .avatar {
     vertical-align: middle;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 2px solid #00B4CC;
+    width: 65px ;
+    height: 65px ;
+    border-radius: 50% ;
+    border: 2px solid #00B4CC ;
 
 }
 
