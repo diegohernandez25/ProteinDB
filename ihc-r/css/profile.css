@@ -5,15 +5,15 @@
 
 .main-content{
     flex-basis: 80%;
-  
+
 }
 
 .profile-info{
     padding: 30px;
-    
+
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;  
+    align-items: flex-start;
 }
 
 .grey-button{
@@ -86,7 +86,7 @@
     border-radius: 20px;
 }
 .nav-button-row >.btn:hover{
-    background-color: rgb(20, 118, 131);    
+    background-color: rgb(20, 118, 131);
 }
 
 .myactive{
@@ -108,14 +108,14 @@
 .filter-row > *{
     border-radius: 15px;
     border: 2px solid #00B4CC;
-    padding: 0 10px; 
+    padding: 0 10px;
     flex: 0;
     flex-basis:20%;
 }
 
 
 .result-list{
-    
+
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -199,7 +199,7 @@ float: right;
 }
 .result-item-answer > :nth-child(2) {
     display: flex;
-    
+
 }
 
 .result-item-answer > :nth-child(2) > img{
@@ -213,7 +213,7 @@ float: right;
 
 .result-item-answer > :first-child > :first-child {
     flex:3;
-    
+
 }
 .result-item-answer > :first-child >* {
     flex:3;
@@ -243,22 +243,11 @@ margin: 0 20px;
     margin-left: 30px
 }
 
+.prev-next{
+  display: flex;
+  flex-direction: row-reverse;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
+}
+.prev-next > .btn{
+  margin: 10px 10px 10px 10px;
+}
