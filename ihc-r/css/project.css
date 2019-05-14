@@ -5,7 +5,7 @@
 
 .main-content{
     flex-basis: 80%;
-  
+
 }
 
 .grey-button{
@@ -37,9 +37,16 @@
 .user > *{
     display:block;
     margin:0 6px;
-    text-align: center; 
+    text-align: center;
 }
 
+.prot-btn{
+  margin: 10px 10px 10px 0
+}
+
+.side-edit-btn{
+  margin: 10px 0 10px 10px
+}
 
 .user> img{
     height: 50px;
@@ -57,6 +64,11 @@
 
 }
 
+.add-ac{
+    margin: 10px 0;
+    flex:0;
+    max-width:20%;
+}
 
 .item{
     border-radius: 15px 15px 15px 15px;
@@ -74,12 +86,17 @@
 
  .item-head{
      display: flex;
-    
+
  }
 
  .item-head > :first-child {flex-grow:1;}
  .item-head > *{flex-grow:1;}
- 
+
+.prev-next{
+  display: flex;
+  flex-direction: row-reverse;;
+}
+
  .filter-row{
     display:flex;
     flex-direction: row-reverse;
@@ -94,10 +111,19 @@
 .filter-row > *{
     border-radius: 15px;
     border: 2px solid #00B4CC;
-    padding: 0 10px; 
+    padding: 0 10px;
     flex: 0;
     flex-basis:20%;
 }
 
+.date  {
+  flex-grow: 1;
+  position:relative;
+}
 
-
+.date > p {
+  float:right;
+  position:absolute;
+  bottom:0;
+  right: 0;
+}
