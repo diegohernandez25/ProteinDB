@@ -4,13 +4,15 @@
 }
 
 .main-content{
-    flex-basis: 80%;
+    flex-basis: 70%;
+}
 
+h1, h2{
+  font-family: 'Baloo Bhai';
 }
 
 .profile-info{
     padding: 30px;
-
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -19,6 +21,30 @@
 .grey-button{
     border-color:#4C4C4C;
     background-color: #4C4C4C;
+}
+
+.green-button{
+  border-color:  #408839;
+  background-color: #408839;
+}
+
+.green-button:hover{
+  border-color:  #397532;
+  background-color: #397532;
+}
+
+.blue-button{
+  border-color: #00B4CC;
+  background-color: #00B4CC;
+}
+.blue-button:hover{
+  #00B4CC
+  border-color: rgb(20, 118, 131);
+  background-color: rgb(20, 118, 131);
+}
+
+.profile-edit > .btn{
+  margin: 10px 0;
 }
 
 .profile-img {
@@ -47,14 +73,7 @@
     flex-direction: column;
 }
 
-.profile-edit>.btn{
-    background-color: #00B4CC;
-    border-color:#00B4CC;
-}
-.profile-edit>.btn:hover{
-    background-color: rgb(20, 118, 131);
-    border-color:rgb(20, 118, 131)
-}
+
 
 
 
@@ -81,8 +100,6 @@
 .nav-button-row >.btn{
     flex:1;
     margin: 30px;
-    background-color: #00B4CC;
-    border-color:#00B4CC;
     border-radius: 20px;
 }
 .nav-button-row >.btn:hover{
@@ -115,11 +132,15 @@
 
 
 .result-list{
-
     display:flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #F2F2F2;
+    padding: 0 20px;
+    margin: 20px 0;
+
+    border-radius: 15px 15px 15px 15px;
 }
 
 
@@ -165,8 +186,6 @@ font-size: 20px;
 
 
 .result-item > :first-child > :last-child>.btn{
-border-color:#4C4C4C;
-background-color: #4C4C4C;
 float: right;
 }
 
@@ -250,4 +269,5 @@ margin: 0 20px;
 }
 .prev-next > .btn{
   margin: 10px 10px 10px 10px;
+  border-radius: 50%;
 }
