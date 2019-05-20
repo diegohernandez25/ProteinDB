@@ -11,17 +11,18 @@
 
 
 .filter-label{
-    color: grey; !important
-    font-family: 'Baloo Bhai', cursive; !important;
+    color: grey !important;
+    font-family: 'Baloo Bhai', cursive !important;
     font-size: 30px;
 }
 
 
 .filter-buttons{
-    background-color: #00B4CC;
-    color:white;
+    background-color: #00B4CC !important;
+    color:white !important;
     margin-top: 5px;
     margin-left: 5px;
+    font-size: 15px;
 }
 
 .search-container{
@@ -39,7 +40,7 @@
 }
 
 .protein-content
-{   color: grey; !important
+{   color: grey !important;
     font-size: 15px;
     padding-top: 2%;
 }

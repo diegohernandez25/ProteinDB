@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Profile from './views/Profile.vue'
 import Question from './views/Question.vue'
 import Protein from './views/Protein.vue'
+import Search from './views/Search.vue'
 
 Vue.use(Router)
 
@@ -33,6 +34,12 @@ export default new Router({
       path: '/protein/:id',
       name: 'protein',
       component: Protein
+    },
+
+    {
+      path: '/search/:id',
+      name: 'search',
+      component: Search
     }
 
   ],

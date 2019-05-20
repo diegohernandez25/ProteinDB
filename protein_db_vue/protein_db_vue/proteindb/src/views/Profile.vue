@@ -62,7 +62,7 @@
                     <questionPrev
                         :question=question
                     />
-                </div>    
+                </div>
             </div>
             <br>
             <br>
@@ -211,5 +211,5 @@ export default {
      width:auto !important;
      height:auto !important;
  }
- 
+
 </style>

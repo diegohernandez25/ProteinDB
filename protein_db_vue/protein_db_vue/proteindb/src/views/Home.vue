@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!--Search box-->
-    <div class="container" style="padding-bottom: -100%">
+    <!--<div class="container" style="padding-bottom: -100%">
         <div class="wrapHomeCellPhone">
             <div class="searchHome">
                 <input type="text" class="searchTermHome" placeholder="What are you looking for?">
@@ -57,7 +57,7 @@
             </div>
 
         </div>
-    </div>
+    </div>-->
     <!--Question section-->
     <div class="container" >
         <div class="ask">
