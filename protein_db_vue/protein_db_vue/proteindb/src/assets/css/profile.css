@@ -1,0 +1,272 @@
+.screen{
+    display: flex;
+    justify-content:center;
+}
+
+.main-content{
+    flex-basis: 70%;
+}
+
+h1, h2{
+  font-family: 'Baloo Bhai';
+}
+
+.profile-info{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.grey-button{
+    border-color:#4C4C4C;
+    background-color: #4C4C4C;
+}
+
+.green-button{
+  border-color:  #408839;
+  background-color: #408839;
+}
+
+.green-button:hover{
+  border-color:  #397532;
+  background-color: #397532;
+}
+
+.blue-button{
+  border-color: #00B4CC;
+  background-color: #00B4CC;
+}
+.blue-button:hover{
+  border-color: rgb(20, 118, 131);
+  background-color: rgb(20, 118, 131);
+}
+
+.profile-edit > .btn{
+  margin: 10px 0;
+}
+
+.profile-img {
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img > img{
+    align-self: auto;
+    border-radius: 50%;
+    border: 3px solid #00B4CC;
+}
+
+.info-container{
+    margin-left: 5%;
+    flex:4;
+    display:flex;
+    flex-direction: column;
+}
+
+.info-container:first-child{
+    margin-left: 5%;
+    flex:4;
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+.info-uni{
+    flex-basis: 40px;
+}
+
+.info-job{
+    flex-basis: 40px;
+}
+
+.info-description{
+    flex-basis: 40px;
+
+}
+
+.nav-button-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nav-button-row >.btn{
+    flex:1;
+    margin: 30px;
+    border-radius: 20px;
+}
+.nav-button-row >.btn:hover{
+    background-color: rgb(20, 118, 131);
+}
+
+.myactive{
+    background-color:rgb(18, 104, 116)!important;
+}
+
+
+.filter-row{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+.filter-row > :first-child{
+    margin-left: 2%;
+}
+
+.filter-row > *{
+    border-radius: 15px;
+    border: 2px solid #00B4CC;
+    padding: 0 10px;
+    flex: 0;
+    flex-basis:20%;
+}
+
+
+.result-list{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    padding: 0 20px;
+    margin: 20px 0;
+
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+.result-item {
+    border-radius: 15px 15px 15px 15px;
+    background: white;
+    border: 3px solid #00B4CC;
+    border-radius: 5px;
+    flex: 1;
+    margin: 2% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+ }
+
+.result-item > * {
+margin: 0 20px;
+}
+
+.result-item > :first-child {
+display: flex;
+}
+.result-item > :first-child > :first-child{
+flex:3;
+
+}
+.result-item > :first-child{
+flex:3;
+margin-top: 20px;
+}
+
+.result-item > :last-child{
+flex:3;
+margin-bottom: 20px;
+}
+.result-item > :first-child > *{
+flex:1;
+}
+.result-item > :first-child >  :not(:first-child){
+font-size: 20px;
+}
+
+
+.result-item > :first-child > :last-child>.btn{
+float: right;
+}
+
+.result-item-answer {
+    border-radius: 15px 15px 15px 15px;
+    background: white;
+    border: 3px solid #00B4CC;
+    border-radius: 5px;
+    flex: 1;
+    margin: 2% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+ }
+
+
+ .result-item-answer > * {
+    margin: 0 20px;
+
+ }
+.result-item-answer > :first-child {
+    display: flex;
+    margin-top: 20px;
+}
+
+.result-item-answer > :last-child {
+    display: flex;
+    margin-bottom: 20px;
+}
+.result-item-answer > :nth-child(2) {
+    display: flex;
+
+}
+
+.result-item-answer > :nth-child(2) > img{
+    height: 50px;
+    width: 50px;
+    align-self: auto;
+    border-radius: 50%;
+    border: 3px solid #00B4CC;
+    margin-right: 10px
+}
+
+.result-item-answer > :first-child > :first-child {
+    flex:3;
+
+}
+.result-item-answer > :first-child >* {
+    flex:3;
+}
+.result-item-answer > :first-child > :last-child>* {
+    float: right;
+}
+.result-item-answer > * {
+margin: 0 20px;
+}
+
+.result-item-answer-bottom-row{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+.result-item-answer-bottom-row > div {
+    flex:1;
+}
+
+.result-item-answer-bottom-row > div > * {
+    float: right;
+}
+
+.result-item-answer-bottom-row > div > div   {
+    margin-left: 30px
+}
+
+.prev-next{
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+.prev-next > .btn{
+  margin: 10px 10px 10px 10px;
+  border-radius: 50%;
+}

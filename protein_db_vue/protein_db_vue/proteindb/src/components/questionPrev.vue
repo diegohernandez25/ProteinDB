@@ -1,0 +1,80 @@
+<template>
+    <div class="container home-question-ans ">
+                <div class="row question-tabs">
+                    <div class="col-sm-12">
+                       <router-link style="color:grey;" :to="`/question/${question.id}`">{{question.title}}</router-link>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>
+                            {{question.body}}
+                        </p>
+                        <a href="#" >more...</a>
+                    </div>
+                    <br>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span style="font-size: 20px">Answer Submited by:</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span style="font-size: 20px">Submited in:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1 hide-item">
+                        <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="col-sm-6">
+            
+                        <router-link :to="`/profile/${userInfo.id}`" class="avatar-name-ans">{{question.author}} </router-link>
+                        <br>
+                        <span class="avatar-workplace">{{userInfo.university}} - {{userInfo.degree}}</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <span class="ans-date">{{question.date}}</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#">{{question.answers.length}} answers.</a>
+                    </div>
+                </div>
+                <br>
+            </div>           
+</template>
+
+<script>
+
+
+import {mapState} from 'vuex'
+
+export default {
+    name: 'questionPrev',
+    props: {
+        question: Object
+    },
+
+    computed: {
+    ...mapState([
+      'users'
+    ]),
+    
+    userInfo: function(){
+        
+        let questAuth= this.question.author;
+        let user=this.users.find(function(user){
+            return user.name==questAuth;
+        });
+        return user ;
+    }
+    }
+
+
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+
+</style>
