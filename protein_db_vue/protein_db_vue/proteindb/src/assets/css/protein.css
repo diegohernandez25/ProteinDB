@@ -1,0 +1,22 @@
+.protein-profile-img {
+    flex:1;
+    display: flex;
+    justify-content: center;
+
+}
+
+.protein-profile-img > img{
+    align-self: auto;
+    border-radius: 50%;
+    border: 3px solid #00B4CC;
+    width: 100%;
+    height: 100%;
+}
+
+.protein-buttons{
+    background-color: #00B4CC !important;
+    border-color: #00B4CC !important;
+    color:white !important;
+    margin-top: 5px;
+    margin-left: 5px;
+}

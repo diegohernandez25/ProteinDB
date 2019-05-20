@@ -24,7 +24,6 @@
             </div>
         </div>
 
-
         <div class=nav-button-row>
             <button @click="state='Projects'" type="button" class="btn btn-primary blue-button myactive">Project</button>
             <button @click="state='Questions'" type="button" class="btn btn-primary blue-button">Questions</button>
@@ -45,15 +44,15 @@
                         <projRes
                         :project=project
                         />
-                </div>       
+                </div>
             </div>
             <div v-else-if="state==='Answers'">
                 <div v-for="answer in filteredAnswers" v-bind:key="answer.id">
-                    
+
                     <answerRes
                         :answer=answer
                     />
-                </div>       
+                </div>
             </div>
             <br>
             <br>
@@ -71,112 +70,100 @@
 <script>
 // @ is an alias to /src
 
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 import projRes from '@/components/projRes.vue'
 import answerRes from '@/components/answerRes.vue'
 
 export default {
   name: 'profile',
   components: {
-      projRes,
-      answerRes
+    projRes,
+    answerRes
   },
 
-   data() {
-      return {
-          currentUser:{},
-          filter:'',
-          state: 'Projects',
+  data () {
+    return {
+      currentUser: {},
+      filter: '',
+      state: 'Projects'
+    }
+  },
+
+  methods: {
+    onChange (event) {
+      if (event.target.value == 'Recent') {
+        this.projects = this.projects.sort(function (item1, item2) {
+          var parts1 = item1.creationDate.split('-')
+          var parts2 = item2.creationDate.split('-')
+          var mydate1 = new Date(parts1[2], parts1[1], parts1[0])
+          var mydate2 = new Date(parts2[2], parts2[1], parts2[0])
+          return mydate2 - mydate1
+        })
       }
-    },
+    }
+  },
 
-
-    methods:{
-        onChange(event){
-            if(event.target.value=="Recent"){
-                this.projects= this.projects.sort(function(item1,item2){
-                    var parts1 =item1. creationDate.split('-');
-                    var parts2 =item2. creationDate.split('-');
-                    var mydate1 = new Date(parts1[2], parts1[1], parts1[0]); 
-                    var mydate2 = new Date(parts2[2], parts2[1], parts2[0]); 
-                    return mydate2-mydate1;
-                })
-            }
-        }
-    },
-
-    computed:{
+  computed: {
     ...mapState([
-        'users',
-        'projects',
-        'questions'
+      'users',
+      'projects',
+      'questions'
     ]),
     /*
     currentUser: function(){
         return this.users.find(function(user){
             return user.id==$route.params.id;
         })
-    }*/
+    } */
 
-
-    filteredProj: function(){
-        
-
-
-        let myfilter= this.filter.toLowerCase();
-       return this.projects.filter(function(project){
-           let projName=project.name.toLowerCase();
-            return projName.includes(myfilter)
-        })
+    filteredProj: function () {
+      let myfilter = this.filter.toLowerCase()
+      return this.projects.filter(function (project) {
+        let projName = project.name.toLowerCase()
+        return projName.includes(myfilter)
+      })
     },
 
-    filteredAnswers: function(){
+    filteredAnswers: function () {
+      let listQuestions = this.questions
 
-         let listQuestions=this.questions;
+      let myfilter = this.filter.toLowerCase()
+      let id = 0
+      let myAnswersList = []
+      for (var questionN in listQuestions) {
+        let question = listQuestions[questionN]
+        for (var answerN in question.answers) {
+          let answer = question.answers[answerN]
 
-        let myfilter= this.filter.toLowerCase();
-        let id=0;
-        let myAnswersList=[];
-        for(var questionN in listQuestions){
-            let question=listQuestions[questionN];
-            for(var answerN in question.answers){
-                 let answer= question.answers[answerN];
-              
-                if(answer.author=="Frederico"){
-                    answer['question']=question.title;
-                    answer['id']=id;
-                    myAnswersList.push(answer);
-                    id++;
-               }
-            }
+          if (answer.author == 'Frederico') {
+            answer['question'] = question.title
+            answer['id'] = id
+            myAnswersList.push(answer)
+            id++
+          }
         }
-       
-       return myAnswersList.filter(function(answer){
-           let answerF=answer.question.toLowerCase();
-            return answerF.includes(myfilter)
-        })
+      }
+
+      return myAnswersList.filter(function (answer) {
+        let answerF = answer.question.toLowerCase()
+        return answerF.includes(myfilter)
+      })
     },
 
+    filteredQuestions: function () {
+      let myfilter = this.filter.toLowerCase()
 
-    filteredQuestions: function(){
-        let myfilter= this.filter.toLowerCase();
-
-        
-
-       
-        return myAnswersList.filter(function(answer){
-            let answerF=answer.question.toLowerCase();
-            return answerF.includes(myfilter)
-        })
+      return myAnswersList.filter(function (answer) {
+        let answerF = answer.question.toLowerCase()
+        return answerF.includes(myfilter)
+      })
     }
 
+  },
 
-    },
-
-    mounted() {
-        this.currentUser=this['users'][this.$route.params.id];
-    }
-
+  mounted () {
+    this.currentUser = this['users'][this.$route.params.id]
+  }
 
 }
 </script>
@@ -184,4 +171,3 @@ export default {
 <style>
  @import '../assets/css/profile.css';
 </style>
-

@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <p>
-                      {{currentQuestion.body}}             
+                      {{currentQuestion.body}}
                 </p>
-                
+
             </div>
             <br>
 
@@ -74,8 +74,6 @@
     </div>
 </div>
 
-
-
 <!--Your answer-->
 
 <div v-for="(answer,index) in currentQuestion.answers" v-bind:key="index">
@@ -84,9 +82,6 @@
         />
 
 </div>
-
-
-
 
 <!--Write Answer section-->
 <div style="padding-top: 3%">
@@ -137,14 +132,14 @@
             </div>
         </div>
     </div>
-        
-        <answerRes2 
+
+        <answerRes2
             :answer2=correctAnswer
         />
-        
+
         <br>
         <br>
-   
+
     <br>
     <div class="container">
         <div class="row">
@@ -168,15 +163,15 @@
         </div>
     </div>
     <br>
-    <div v-for="(answer,index) in currentQuestion.answers" v-bind:key="index" >  
+    <div v-for="(answer,index) in currentQuestion.answers" v-bind:key="index" >
             <answerRes2 v-if="index!==currentQuestion.answeredStatus"
             :answer2=answer
-            />    
+            />
         <br>
         <br>
     </div>
     <br>
-   
+
     <div class="container" style="padding-top: 5%; padding-bottom: 2%">
         <div class="row">
             <div class="col-sm-9">
@@ -214,46 +209,41 @@
 <script>
 // @ is an alias to /src
 
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 import answerRes2 from '@/components/answerRes2.vue'
 
 export default {
   name: 'profile',
   components: {
-      answerRes2
+    answerRes2
   },
 
-   data() {
-      return {
-          currentQuestion:{},
-          correctAnswer:{}
-      }
-    },
-
-
-    methods:{
-       
-    },
-
-    computed:{
-    ...mapState([
-        'users',
-        'questions'
-    ]),
-
-    
- 
-    },
-    
-
-    mounted() {
-        let curQ=this['questions'][this.$route.params.id];
-        this.currentQuestion=curQ;
-
-        let corrA=curQ['answeredStatus']
-        this.correctAnswer=curQ['answers'][corrA]
+  data () {
+    return {
+      currentQuestion: {},
+      correctAnswer: {}
     }
+  },
 
+  methods: {
+
+  },
+
+  computed: {
+    ...mapState([
+      'users',
+      'questions'
+    ])
+
+  },
+
+  mounted () {
+    let curQ = this['questions'][this.$route.params.id]
+    this.currentQuestion = curQ
+
+    let corrA = curQ['answeredStatus']
+    this.correctAnswer = curQ['answers'][corrA]
+  }
 
 }
 </script>
@@ -261,4 +251,3 @@ export default {
 <style>
  @import '../assets/css/question.css';
 </style>
-

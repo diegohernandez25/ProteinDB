@@ -10,7 +10,6 @@
                 </button>
             </div>
 
-
             <div class="row hide-item" style="padding-top: 2%">
                 <div class="col-sm-1" style=""></div>
                 <div class="col-sm-1" style="padding-left:1%; padding-right: 10%">
@@ -97,7 +96,7 @@
         <b-tab @click="tabIndex=0; resetIndex()" title="Most Viewed" active>
           <div id='Most_Viewed_Questions' class="tab-content padding-grey-area">
 
-             <div v-for="(question,index) in orderedQuestionsByViews.slice(index, index+3)" v-bind:key="index" class=question > 
+             <div v-for="(question,index) in orderedQuestionsByViews.slice(index, index+3)" v-bind:key="index" class=question >
               <Question
               :question="question"
               />
@@ -106,7 +105,7 @@
         </b-tab>
         <b-tab @click="tabIndex=1; resetIndex()" title="Not Answered">
           <div id='Not_Answered' class="tab-content">
-           <div v-for="(question,index) in nonAnswerdQuestions.slice(index, index+3)" v-bind:key="index" class=question > 
+           <div v-for="(question,index) in nonAnswerdQuestions.slice(index, index+3)" v-bind:key="index" class=question >
               <Question
               :question="question"
               />
@@ -145,7 +144,7 @@
             <br>
             <br>
      </b-tabs>
-  </div>
+    </div>
     <div>
     <b-table striped hover :items="nonAnswerdQuestions" :fields="fields"></b-table>
   </div>
@@ -156,9 +155,7 @@
 // @ is an alias to /src
 import Question from '@/components/questionPrev.vue'
 
-import {mapState} from 'vuex'
-import {mapActions} from 'vuex'
-
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'home',
@@ -166,68 +163,63 @@ export default {
     Question
   },
 
-   data() {
-      return {
-        fields: ['title'],  
-        index: 0,
-        tabIndex:0,
-       
+  data () {
+    return {
+      fields: ['title'],
+      index: 0,
+      tabIndex: 0
+
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'addQuestion'
+    ]),
+
+    next: function () {
+      if (this.tabIndex == 0) {
+        if (this.orderedQuestionsByViews.length > this.index + 3) {
+          this.index += 3
+        }
+      } else {
+        if (this.nonAnswerdQuestions.length > this.index + 3) {
+          this.index += 3
+        }
       }
     },
 
-    methods:{
-        ...mapActions([
-            'addQuestion'
-        ]),
-
-        next: function(){
-            if(this.tabIndex==0){
-                if(this.orderedQuestionsByViews.length>this.index+3){
-                    this.index+=3;
-                }
-            }
-            else{
-                if(this.nonAnswerdQuestions.length>this.index+3){
-                    this.index+=3;
-                }
-            }
-            
-        },
-
-        prev: function(){
-            if(this.index>0){
-                this.index-=3;
-            }
-        },
-
-        resetIndex: function(){
-            this.index=0;
-        },
-
-        submitNewQuestion(){
-            this.addQuestion(question)
-        }
-
-        
+    prev: function () {
+      if (this.index > 0) {
+        this.index -= 3
+      }
     },
 
-  computed:{
+    resetIndex: function () {
+      this.index = 0
+    },
+
+    submitNewQuestion () {
+      this.addQuestion(question)
+    }
+
+  },
+
+  computed: {
     ...mapState([
       'questions'
     ]),
 
-
-    orderedQuestionsByViews: function(){
-      return this.questions.sort(function(item1, item2) {
-            return item2.views - item1.views;
-            });
+    orderedQuestionsByViews: function () {
+      return this.questions.sort(function (item1, item2) {
+        return item2.views - item1.views
+      })
     },
 
-
-    nonAnswerdQuestions: function(){
-        return this.questions.filter(function(item){
-            return item.answers.length==0;
-        })
+    nonAnswerdQuestions: function () {
+      return this.questions.filter(function (item) {
+        return item.answers.length == 0
+      })
     }
 
   }
@@ -239,4 +231,3 @@ export default {
     padding:20px;
   }
 </style>
-

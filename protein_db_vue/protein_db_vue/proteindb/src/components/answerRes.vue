@@ -23,8 +23,8 @@
         <div class="result-item-answer-bottom-row">
             <a href="">more</a>
             <div>
-                <diV>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-up"></i></button> {{answer.upvotes}} </diV>
-                <diV>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-down"></i></button> {{answer.downvotes}} </diV>
+                <div>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-up"></i></button> {{answer.upvotes}} </div>
+                <div>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-down"></i></button> {{answer.downvotes}} </div>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@ export default {
 
     computed: {
     ...mapState([
-      
+
     ]),
     }
 }
