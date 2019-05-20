@@ -2,7 +2,7 @@
 <div id ="protein">
   <div class="container">
     <div class="row">
-      <h1>Protein Name</h1>
+      <h1 style="color: grey">Protein Name</h1>
     </div>
     <div class="row">
       <div class="col-sm-4">
@@ -11,9 +11,9 @@
         </div>
       </div>
       <div class="col-sm-8">
-        <h2> Simplified Name:</h2> name <br>
-        <h2> Family:</h2> name of the family <br>
-        <h2> Gene:</h2> name of the gene.<br>
+        <h2 style="color: grey"> Simplified Name:</h2> name <br>
+        <h2 style="color: grey"> Family:</h2> name of the family <br>
+        <h2 style="color: grey"> Gene:</h2> name of the gene.<br>
         <p>AS armas e os Barões assinalados
           Que da Ocidental praia Lusitana
           Por mares nunca de antes navegados
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="row" style="padding-top: 10px">
-      <h2>Interacts with:</h2>
+      <h2 style="color: grey">Interacts with:</h2>
     </div>
     <div class="row" >
       <div>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="row" style="padding-top: 10px">
-      <h2>Species</h2>
+      <h2 style="color: grey">Species</h2>
     </div>
     <div class="row">
       <div>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="row" style="padding-top: 10px">
-      <h2>Diseases:</h2>
+      <h2 style="color: grey">Diseases:</h2>
     </div>
     <div class="row">
       <div>
@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="row" style="padding-top: 10px">
-      <h2>Functions:</h2>
+      <h2 style="color: grey">Functions:</h2>
     </div>
     <div class="row">
       <p>As armas e os barões assinalados,
@@ -480,11 +480,9 @@
                   <div class="col-sm-12">
                     <span style="font-size: 20px">Proteins associated with project:</span>
                     <br><br>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico </button>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
                   </div>
                 </div>
                 <br>
@@ -544,11 +542,9 @@
                   <div class="col-sm-12">
                     <span style="font-size: 20px">Proteins associated with project:</span>
                     <br><br>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
-                    <a href="#"><span class="protein-tag"> Frederico</span></a>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico </button>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
+                    <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
                   </div>
                 </div>
                 <br>

@@ -46,19 +46,7 @@
                 Profile
               </a>
             </li>
-
-                  <li class="nav-item">
-                      <a class="nav-link" style="color: #4C4C4C" href="#">
-                          Sign out
-                      </a>
-                  </li>
-                  <li class="nav-item" >
-                      <router-link :to="`/profile/0`" class="nav-link" style="color: #4C4C4C" href="#">
-                          Profile
-                      </router-link>
-                  </li>
-
-              </ul>
+           </ul>
           </div>
       </div>
     </nav>
@@ -145,5 +133,6 @@ export default {
 @import 'assets/css/indextabs.css';
 @import 'assets/css/navbar.css';
 @import 'assets/css/protein.css';
+@import 'assets/css/search.css';
 
 </style>
