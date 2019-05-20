@@ -25,9 +25,9 @@
         </div>
 
         <div class=nav-button-row>
-            <button @click="state='Projects'" type="button" class="btn btn-primary blue-button myactive">Project</button>
-            <button @click="state='Questions'" type="button" class="btn btn-primary blue-button">Questions</button>
-            <button @click="state='Answers'" type="button" class="btn btn-primary blue-button">Answers</button>
+            <button ref="Projects" @click="state='Projects'; clearRefs($event)" type="button" class="btn btn-primary blue-button myactive">Project</button>
+            <button ref="Questions" @click="state='Questions'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Questions</button>
+            <button ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Answers</button>
          </div>
 
         <div class=filter-row>
@@ -57,7 +57,7 @@
 
             <div v-else>
                 
-                <div class="questions" v-for="(question,index) in listOfQuestions" v-bind:key="index">
+                <div class="questions" v-for="(question,index) in filteredQuestions" v-bind:key="index">
                      
                     <questionPrev
                         :question=question
@@ -80,11 +80,7 @@
 <script>
 // @ is an alias to /src
 
-<<<<<<< HEAD
-import { mapState } from 'vuex'
-=======
 import {mapState, mapGetters} from 'vuex'
->>>>>>> c551fc2620b39bd5b794423c3f1700855e8b7462
 import projRes from '@/components/projRes.vue'
 import answerRes from '@/components/answerRes.vue'
 import questionPrev from '@/components/questionPrev.vue'
@@ -92,14 +88,9 @@ import questionPrev from '@/components/questionPrev.vue'
 export default {
   name: 'profile',
   components: {
-<<<<<<< HEAD
-    projRes,
-    answerRes
-=======
       projRes,
       answerRes,
       questionPrev
->>>>>>> c551fc2620b39bd5b794423c3f1700855e8b7462
   },
 
   data () {
@@ -121,7 +112,17 @@ export default {
           return mydate2 - mydate1
         })
       }
+    },
+
+    clearRefs(event){
+       // console.log()
+        this.$refs['Projects'].classList.remove("myactive");
+        this.$refs['Answers'].classList.remove("myactive");
+        this.$refs['Questions'].classList.remove("myactive");
+        event.target.classList.add("myactive")
     }
+
+
   },
 
   computed: {
@@ -182,9 +183,9 @@ export default {
     filteredQuestions: function () {
       let myfilter = this.filter.toLowerCase()
 
-      return myAnswersList.filter(function (answer) {
-        let answerF = answer.question.toLowerCase()
-        return answerF.includes(myfilter)
+      return this.listOfQuestions.filter(function (question) {
+        let questF = question.title.toLowerCase()
+        return questF.includes(myfilter)
       })
     }
 
