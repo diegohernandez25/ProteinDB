@@ -47,8 +47,19 @@
               </a>
             </li>
 
-          </ul>
-        </div>
+                  <li class="nav-item">
+                      <a class="nav-link" style="color: #4C4C4C" href="#">
+                          Sign out
+                      </a>
+                  </li>
+                  <li class="nav-item" >
+                      <router-link :to="`/profile/0`" class="nav-link" style="color: #4C4C4C" href="#">
+                          Profile
+                      </router-link>
+                  </li>
+
+              </ul>
+          </div>
       </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light non-cellphone hide-item">
@@ -106,6 +117,25 @@
 
 <script>
 
+import {mapGetters} from 'vuex'
+
+export default {
+  name: 'app',
+  components: {
+  },
+   computed:{
+    ...mapGetters([
+        'getLoggedInUser',
+        'getIDbyUserName'
+    ]),
+    /*
+    loggedUserID(){
+        let lgU=this.getLoggedInUser.name
+        console.log("ola"+lgU)
+        return this.getIDbyUserName(lgU)
+    }*/
+    }
+}
 </script>
 
 <style>
