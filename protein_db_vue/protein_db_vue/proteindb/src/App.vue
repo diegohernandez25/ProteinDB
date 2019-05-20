@@ -44,9 +44,9 @@
                       </a>
                   </li>
                   <li class="nav-item" >
-                      <a class="nav-link" style="color: #4C4C4C" href="#">
+                      <router-link :to="`/profile/0`" class="nav-link" style="color: #4C4C4C" href="#">
                           Profile
-                      </a>
+                      </router-link>
                   </li>
 
               </ul>
@@ -114,20 +114,26 @@
 
 
 <script>
-/*
-import {mapState} from 'vuex'
+
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'app',
   components: {
   },
    computed:{
-    ...mapState([
-        'users',
+    ...mapGetters([
+        'getLoggedInUser',
+        'getIDbyUserName'
     ]),
-    loggedUser: function(){return this.users[0]}
+    /*
+    loggedUserID(){
+        let lgU=this.getLoggedInUser.name
+        console.log("ola"+lgU)
+        return this.getIDbyUserName(lgU)
+    }*/
     }
-}*/
+}
 </script>
 
 

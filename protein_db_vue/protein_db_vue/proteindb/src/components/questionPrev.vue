@@ -2,7 +2,7 @@
     <div class="container home-question-ans ">
                 <div class="row question-tabs">
                     <div class="col-sm-12">
-                       <router-link style="color:grey;" :to="`/question/${question.id}`">{{question.title}}</router-link>
+                       <router-link style="color:grey;" :to="`/question/${getID}`">{{question.title}}</router-link>
                     </div>
                 </div>
                 <div class="row">
@@ -47,7 +47,7 @@
 <script>
 
 
-import {mapState} from 'vuex'
+import {mapState,mapGetters} from 'vuex'
 
 export default {
     name: 'questionPrev',
@@ -59,6 +59,16 @@ export default {
     ...mapState([
       'users'
     ]),
+
+    ...mapGetters([
+        'getIDbyQuestion'
+    ]),
+
+    getID(){
+        let x=this.getIDbyQuestion(this.question.title)
+        return x
+    },
+    
     
     userInfo: function(){
         

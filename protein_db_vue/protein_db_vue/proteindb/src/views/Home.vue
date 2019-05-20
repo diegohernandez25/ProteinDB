@@ -74,14 +74,18 @@
 
             </div>
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
-                <input  type="text" class="question-text" placeholder="Ask a Question!">
+                <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
+            </div>
+            
+            <div class="row" style="padding-left: 5%; padding-top: 3%">
+                <input  v-model="questionForm.body" type="text" class="question-text" placeholder="Explain more details about your question.">
             </div>
             <div class="row" style="padding-left: 5%; padding-top: 3%">
                 <div class="col-sm-9">
                     <input type="text" class="tag-text" placeholder="➕ add tag" style="width: 12%">
                 </div>
                 <div class="col-sm-3">
-                    <button type="submit" class="submit-question">
+                    <button @click="submitNewQuestion()" type="submit" class="submit-question">
                         Submit
                     </button>
                 </div>
@@ -171,7 +175,15 @@ export default {
         fields: ['title'],  
         index: 0,
         tabIndex:0,
-       
+        questionForm: {
+                title: '',
+                body: '',
+                author: 'Frederico',
+                answers: [],
+                date: '01-01-2019',
+                views:0,
+                answeredStatus:-1
+            },
       }
     },
 
@@ -205,8 +217,27 @@ export default {
         },
 
         submitNewQuestion(){
-            this.addQuestion(question)
-        }
+           
+            if(this.questionForm.title!=''){
+                this.addQuestion(this.questionForm);
+                alert("Your question was submited")
+            }
+            else{
+                alert("You can't submit an empty question")
+            }
+            this.questionForm= {
+                title: '',
+                body: '',
+                author: 'Frederico',
+                answers: [],
+                date: '01-01-2019',
+                views:0,
+                answeredStatus:-1
+            }
+            
+        },
+
+
 
         
     },

@@ -55,6 +55,16 @@
                     />
                 </div>       
             </div>
+
+            <div v-else>
+                
+                <div class="questions" v-for="(question,index) in listOfQuestions" v-bind:key="index">
+                     
+                    <questionPrev
+                        :question=question
+                    />
+                </div>    
+            </div>
             <br>
             <br>
 
@@ -71,15 +81,17 @@
 <script>
 // @ is an alias to /src
 
-import {mapState} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 import projRes from '@/components/projRes.vue'
 import answerRes from '@/components/answerRes.vue'
+import questionPrev from '@/components/questionPrev.vue'
 
 export default {
   name: 'profile',
   components: {
       projRes,
-      answerRes
+      answerRes,
+      questionPrev
   },
 
    data() {
@@ -111,6 +123,14 @@ export default {
         'projects',
         'questions'
     ]),
+
+    ...mapGetters([
+        'getUserQuestions'
+    ]),
+
+    listOfQuestions: function(){
+        return this.getUserQuestions("Frederico");
+    },
     /*
     currentUser: function(){
         return this.users.find(function(user){
@@ -183,5 +203,17 @@ export default {
 
 <style>
  @import '../assets/css/profile.css';
+
+
+.questions{
+    display:flex;
+    align-items:center;
+}
+ .questions > *{
+     margin:0% !important;
+     width:auto !important;
+     height:auto !important;
+ }
+ 
 </style>
 
