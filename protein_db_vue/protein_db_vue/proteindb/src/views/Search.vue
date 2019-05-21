@@ -110,22 +110,14 @@
             <a class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                 font-family: 'Baloo Bhai', cursive;">Chosen Filters</a>
           </div>
-          <div>
+          <div v-for="(param,index) in listOfParams" v-bind:key="index">
+           
+            
             <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
-            <span style="font-size: 20px">Proteins</span>
+            <span style="font-size: 20px">{{param}}</span>
 
-            <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
-            <span style="font-size: 20px">Proteins</span>
-
-            <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
-            <span style="font-size: 20px">Publications</span>
-
-            <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
-            <span style="font-size: 20px">Oldest</span>
-
-            <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
-            <span style="font-size: 20px">Popular</span>
           </div>
+          <!--
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -324,8 +316,8 @@
               </div>
             </div>
           </div>
-
-
+  -->
+          <!--
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -491,7 +483,7 @@
               </div>
             </div>
           </div>
-
+    -->
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -565,6 +557,7 @@
               </div>
             </div>
             <br>
+            <div v-for="(protein,index) in filteredProteinList" v-bind:key="index">
             <div class="container home-question-ans">
               <div class="row protein-content">
                 <div class="col-sm-4">
@@ -572,24 +565,9 @@
                 </div>
                 <div class="col-sm-8">
                             <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Frederico</span>
-                  in <span style="color: gray">Proteins</span></span>
-                  <p>As armas e os barões assinalados,
-                    Que da ocidental praia Lusitana,
-                    Por mares nunca de antes navegados,
-                    Passaram ainda além da Taprobana,
-                    Em perigos e guerras esforçados,
-                    Mais do que prometia a força humana,
-                    E entre gente remota edificaram
-                    Novo Reino, que tanto sublimaram;
-                    As armas e os barões assinalados,
-                    Que da ocidental praia Lusitana,
-                    Por mares nunca de antes navegados,
-                    Passaram ainda além da Taprobana,
-                    Em perigos e guerras esforçados,
-                    Mais do que prometia a força humana,
-                    E entre gente remota edificaram
-                    Novo Reino, que tanto sublimaram;
+                    font-family: 'Baloo Bhai', cursive;">{{protein.name}}</span>
+                  in <span style="color: gray">Proteins</span>
+                  <p>Oxytocin (Oxt) is a peptide hormone and neuropeptide. Oxytocin is normally produced in the hypothalamus and released by the posterior pituitary.[3] It plays a role in social bonding, 
                   </p>
                   <p><a href="#">more...</a></p>
                 </div>
@@ -606,7 +584,6 @@
                   <span style="font-size: 20px">Discovered in:</span>
                   <br>
                   25-03-1996
-                  </span>
                 </div>
                 <div class="col-sm-4">
                   <span style="font-size: 20px">Number of articles associated with:</span>
@@ -624,6 +601,7 @@
               <br>
             </div>
             <br>
+            </div>
             <div class="container" style="padding-top: 1%; padding-bottom: 2%">
               <div class="row">
                 <div class="col-sm-9">
@@ -663,8 +641,55 @@
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
+
 export default {
-  name: 'Search'
+  name: 'Search',
+  data(){
+    return{
+
+    }
+  },
+
+  methods:{
+
+  },
+
+  computed:{
+
+    ...mapState([
+      'proteins'
+    ]),
+
+    listOfParams(){
+      var list=[]
+      console.log(this.$route.query)
+      for(var param in this.$route.query){
+        if(this.$route.query[param]!="false"){
+          list.push(param)
+        }
+      }
+      console.log(list);
+     return  list
+    },
+
+    filteredProteinList(){
+      console.log("in filtering...");
+      let myfilter = this.$route.query['searchText'].toLowerCase();
+      console.log(myfilter);
+      console.log(this.proteins)
+      return this.proteins.filter(function (protein) {
+        console.log(protein)
+        let protName = protein.name.toLowerCase()
+        return protName.includes(myfilter)
+      })
+    }
+
+
+  }
+
+
 }
 </script>
 

@@ -70,9 +70,10 @@ export default {
       'getIDbyUserName'
     ]),
 
-    getID () {
-      let uN = this.answer2.author
-      return this.getIDbyUserName(uN)
+    getID(){
+        console.log(this.answer2.author)
+        let uN= this.answer2.author
+        return this.getIDbyUserName(uN)
     },
 
     userInfo: function () {

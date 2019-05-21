@@ -124,7 +124,8 @@
     </div>
 </div>
 
-<div class="container-fluid all-answers normal-container-fluid" >
+<div  class="container-fluid all-answers normal-container-fluid" >
+    <div v-if="getCorrectAnswer != null">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -132,11 +133,11 @@
             </div>
         </div>
     </div>
-
+        
         <answerRes2
-            :answer2=correctAnswer
+            :answer2=getCorrectAnswer
         />
-
+    </div>
         <br>
         <br>
 
@@ -164,6 +165,7 @@
     </div>
     <br>
     <div v-for="(answer,index) in currentQuestion.answers" v-bind:key="index" >
+            
             <answerRes2 v-if="index!==currentQuestion.answeredStatus"
             :answer2=answer
             />
@@ -221,7 +223,8 @@ export default {
   data () {
     return {
       currentQuestion: {},
-      correctAnswer: {}
+      correctAnswer: {},
+      id: this.$route.params.id
     }
   },
 
@@ -233,7 +236,20 @@ export default {
     ...mapState([
       'users',
       'questions'
-    ])
+    ]),
+
+    getCorrectAnswer(){
+        let aS=this.questions[this.id]['answeredStatus'];
+        if(aS>=0){
+            console.log("--");
+            console.log(this.questions[this.id]['answers'][aS])
+            return this.questions[this.id]['answers'][aS]
+        }
+        else {
+            console.log("--");
+            return null
+        }
+    }
 
   },
 
