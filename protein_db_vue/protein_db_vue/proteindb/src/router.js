@@ -5,6 +5,7 @@ import Profile from './views/Profile.vue'
 import Question from './views/Question.vue'
 import Protein from './views/Protein.vue'
 import Search from './views/Search.vue'
+import CreateProject from './views/CreateProject.vue'
 
 Vue.use(Router)
 
@@ -40,6 +41,12 @@ export default new Router({
       path: '/search/:id',
       name: 'search',
       component: Search
+    },
+
+    {
+      path: '/createproject/',
+      name: 'createproject',
+      component: CreateProject
     }
 
   ],

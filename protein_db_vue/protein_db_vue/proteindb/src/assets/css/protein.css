@@ -20,3 +20,12 @@
     margin-top: 5px;
     margin-left: 5px;
 }
+
+.add-button{
+    background-color: #00B4CC !important;
+    border-color: #00B4CC !important;
+    color:white !important;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 5px;
+}
