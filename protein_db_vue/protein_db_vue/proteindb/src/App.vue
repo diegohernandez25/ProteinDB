@@ -138,5 +138,6 @@ export default {
 @import 'assets/css/navbar.css';
 @import 'assets/css/protein.css';
 @import 'assets/css/search.css';
+@import 'assets/css/project.css';
 
 </style>
