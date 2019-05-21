@@ -5,19 +5,25 @@
                 <p>
                     {{answer2.text}}
                 </p>
-               
+
             </div>
             <br>
 
         </div>
         <div class="row">
             <div class="col-sm-5">
-                <span style="font-size: 20px">Answer Submited by:</span>
+                <span style="font-size: 16px">Answer Submited by:</span>
             </div>
             <div class="col-sm-2">
-                <span style="font-size: 20px">Submited in:</span>
+                <span style="font-size: 16px">Submited in:</span>
             </div>
         </div>
+
+
+
+
+
+
         <div class="row">
             <div class="col-sm-1 hide-item">
                 <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
@@ -27,9 +33,9 @@
                 <br>
                 <span class="avatar-workplace">{{userInfo.university}} - {{userInfo.degree}}</span>
             </div>
-            <div class="col-sm-1 show-item" style="display: none"></div>
+
             <div class="col-sm-3">
-                <span class="ans-date">{{answer2.date}}</span>
+                <span class="ans-date" style="font-size: 15px">{{answer2.date}}</span>
             </div>
             <div class="col-sm-3">
                 <button style=" font-size: 130%"
@@ -47,22 +53,21 @@
 
 <script>
 
-
-import {mapState, mapGetters} from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
-    name: 'answerPrev2',
-    props: {
-        answer2: Object
-    },
+  name: 'answerPrev2',
+  props: {
+    answer2: Object
+  },
 
-    computed: {
+  computed: {
     ...mapState([
       'users'
     ]),
 
     ...mapGetters([
-        'getIDbyUserName'
+      'getIDbyUserName'
     ]),
 
     getID(){
@@ -71,16 +76,15 @@ export default {
         return this.getIDbyUserName(uN)
     },
 
-    userInfo: function(){
-         let c= this.answer2.author;
-         console.log(c)
-        let user=this.users.find(function(user){
-            
-            return user.name==c;
-        });
-        return user ;
+    userInfo: function () {
+      let c = this.answer2.author
+      console.log(c)
+      let user = this.users.find(function (user) {
+        return user.name == c
+      })
+      return user
     }
-    }
+  }
 }
 </script>
 

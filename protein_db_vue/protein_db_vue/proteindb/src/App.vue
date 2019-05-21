@@ -34,7 +34,11 @@
                
               </div>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" style="color: #4C4C4C" href="/createproject">
+                Create Project
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" style="color: #4C4C4C" href="#">
                 Sign out
@@ -49,7 +53,7 @@
           </div>
       </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light non-cellphone hide-item">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light non-cellphone hide-item" style="margin-right: 85px;">
       <div class="wrap">
         <ul class="navbar-nav mr-auto">
          
@@ -139,7 +143,7 @@
 
 <script>
 
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
@@ -177,16 +181,16 @@ export default {
   
    computed:{
     ...mapGetters([
-        'getLoggedInUser',
-        'getIDbyUserName'
-    ]),
+      'getLoggedInUser',
+      'getIDbyUserName'
+    ])
     /*
     loggedUserID(){
         let lgU=this.getLoggedInUser.name
         console.log("ola"+lgU)
         return this.getIDbyUserName(lgU)
-    }*/
-    }
+    } */
+  }
 }
 </script>
 
