@@ -23,7 +23,7 @@
                 <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
             </div>
             <div class="col-sm-4">
-                <router-link :to="`/profile/${userInfo.id}`" class="avatar-name-ans" href="#">{{answer2.author}}</router-link>
+                <router-link :to="`/profile/${getID}`" class="avatar-name-ans" href="#">{{answer2.author}}</router-link>
                 <br>
                 <span class="avatar-workplace">{{userInfo.university}} - {{userInfo.degree}}</span>
             </div>
@@ -48,7 +48,7 @@
 <script>
 
 
-import {mapState} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 
 export default {
     name: 'answerPrev2',
@@ -60,6 +60,15 @@ export default {
     ...mapState([
       'users'
     ]),
+
+    ...mapGetters([
+        'getIDbyUserName'
+    ]),
+
+    getID(){
+        let uN= this.answer2.author
+        return this.getIDbyUserName(uN)
+    },
 
     userInfo: function(){
          let c= this.answer2.author;

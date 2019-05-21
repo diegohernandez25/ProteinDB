@@ -66,7 +66,7 @@
                     <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
                 </div>
                 <div class="col-sm-11">
-                    <a class="avatar-name" href="#">Frederico   </a>
+                    <router-link class="avatar-name" :to="`/profile/0`">Frederico</router-link>
                     <br>
                     <span class="avatar-workplace">University of Aveiro - Biology Master Degree</span>
                 </div>
