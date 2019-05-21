@@ -45,9 +45,9 @@
               </a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" style="color: #4C4C4C" href="#">
+              <router-link :to="'/profile/0'" class="nav-link" style="color: #4C4C4C" href="#">
                 Profile
-              </a>
+              </router-link>
             </li>
            </ul>
           </div>
@@ -165,13 +165,24 @@ export default {
        search(){
           //this.$router=""
           //this.$router.replace("search/"+this.sFilters.proteins+"/"+this.sFilters.publications+"/"+this.sFilters.author+"/"+this.sFilters.question+"/"+this.sFilters.project);
-          this.$router.push({ path: 'search', query: { proteins: this.sFilters.proteins,
+          if(this.sFilters.proteins=="false" && this.sFilters.publications=="false" && this.sFilters.author=="false" && this.sFilters.question=="false" && this.sFilters.project=="false"){
+            console.log("all false");
+            this.$router.replace({ path: '/search', query: { proteins: 'true',
+          publications: 'true',
+          author: 'true',
+          question: 'true',
+          project: 'true',
+          searchText: this.sText
+          } })
+          }
+          else{
+          this.$router.replace({ path: '/search', query: { proteins: this.sFilters.proteins,
           publications: this.sFilters.publications,
           author: this.sFilters.author,
           question: this.sFilters.question,
           project: this.sFilters.project,
           searchText: this.sText
-          } })
+          } })}
        }
    },
 

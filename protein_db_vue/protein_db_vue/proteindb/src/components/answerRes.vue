@@ -2,7 +2,9 @@
 <template>
     <div class="result-item-answer">
         <div>
-            <h2>{{answer.question}}</h2>
+                        
+
+            <h2><router-link class="other-answer-label" :to="`/question/${getID}`">{{answer.question}}</router-link></h2>
 
             <div>
                 <button type="button" class="btn add-button"><i class="fas fa-pencil-alt"></i></button>
@@ -31,7 +33,7 @@
 
 <script>
 
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'answerPrev',
@@ -39,10 +41,20 @@ export default {
     answer: Object
   },
 
-  computed: {
+   computed: {
     ...mapState([
+      'users'
+    ]),
 
-    ])
+    ...mapGetters([
+      'getIDbyQuestion'
+    ]),
+
+    getID () {
+      let x = this.getIDbyQuestion(this.answer.question)
+      return x
+    },
+
   }
 }
 </script>

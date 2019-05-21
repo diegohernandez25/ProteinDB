@@ -29,6 +29,25 @@ export default{
         })
         console.log(index)
         return index;  
+    },
+
+    getProjecIDtByName: (state) => (pName)=>{
+        var index=-1
+        let k= state['projects'].find(function(item, i){  
+            if(item.name==pName){
+                index=i;              
+                return i;
+            }
+        })
+        return index; 
+    },
+
+    getProjectByID: (state) => (pID)=>{
+        return state['projects'][pID];
+    },
+
+    getProteinByID: (state) => (prID)=>{
+        return state['proteins'][prID];
     }
 
 }

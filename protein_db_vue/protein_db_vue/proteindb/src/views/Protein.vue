@@ -2,7 +2,7 @@
 <div id ="protein">
   <div class="container">
     <div class="row">
-      <h1 style="color: grey">Protein Name</h1>
+      <h1 style="color: grey">{{protein.name}}</h1>
     </div>
     <div class="row">
       <div class="col-sm-4">
@@ -610,8 +610,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  name: 'Protein'
+  name: 'Protein',
+  data(){
+    return{
+
+    }
+  },
+
+  computed:{
+     ...mapGetters([
+      'getProteinByID'
+    ]),
+
+    protein(){
+      return this.getProteinByID(this.$route.params.id);
+    }
+
+}
+
 }
 </script>
 

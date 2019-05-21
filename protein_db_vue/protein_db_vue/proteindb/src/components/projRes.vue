@@ -1,7 +1,7 @@
 <template>
     <div class="result-item">
         <div>
-            <h2>{{project.name}}</h2>
+            <h2> <router-link style="color:grey" :to="`/project/${idByName}`"> {{project.name}} </router-link></h2>
             <div>
                     {{project.favourites}} <i class="fas fa-star" style="color: rgba(255, 217, 0, 0.993);"></i>
                 </div>
@@ -28,7 +28,7 @@
 <script>
 
 
-import {mapState} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 
 export default {
     name: 'questionPrev',
@@ -40,6 +40,14 @@ export default {
     ...mapState([
 
     ]),
+
+    ...mapGetters([
+        'getProjecIDtByName'
+    ]),
+
+    idByName(){
+        return this.getProjecIDtByName(this.project.name);
+    }
 
 
     }

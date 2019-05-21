@@ -151,9 +151,7 @@
             <br>
      </b-tabs>
     </div>
-    <div>
-    <b-table striped hover :items="nonAnswerdQuestions" :fields="fields"></b-table>
-  </div>
+    
   </div>
 </template>
 

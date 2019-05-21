@@ -564,8 +564,8 @@
                   <img src="../assets/images/protein_img.png" alt="Avatar" class="protein-img">
                 </div>
                 <div class="col-sm-8">
-                            <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">{{protein.name}}</span>
+                            <router-link :to="'/protein/0'" class="filter-label" style="color: #4C4C4C;padding-top: 2%;
+                    font-family: 'Baloo Bhai', cursive;">{{protein.name}}</router-link>
                   in <span style="color: gray">Proteins</span>
                   <p>Oxytocin (Oxt) is a peptide hormone and neuropeptide. Oxytocin is normally produced in the hypothalamus and released by the posterior pituitary.[3] It plays a role in social bonding, 
                   </p>

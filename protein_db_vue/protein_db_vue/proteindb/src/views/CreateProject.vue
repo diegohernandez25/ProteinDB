@@ -118,7 +118,7 @@ export default {
       this.currentMember='';
       this.role='';
       this.form.name='';
-      this.form.member= ["Frederico"];
+      this.form.members= ["Frederico"];
       this.form.proteins='';
       this.form.priv='';
      
