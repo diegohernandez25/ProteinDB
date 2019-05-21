@@ -12,7 +12,7 @@
                     {{project.articles.length}} Articles
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary green-button"><i class="fas fa-pencil-alt"></i></button>
+                    <button type="button" class="btn add-button"><i class="fas fa-pencil-alt"></i></button>
                 </div>
         </div>
         <div>
@@ -22,7 +22,7 @@
                 <b>Project Manager:</b> {{project.manager}} <br>
                 <b>Institute:</b> {{project.institute}}
         </div>
-    </div>       
+    </div>
 </template>
 
 <script>
@@ -38,10 +38,10 @@ export default {
 
     computed: {
     ...mapState([
-      
+
     ]),
-    
-   
+
+
     }
 }
 </script>

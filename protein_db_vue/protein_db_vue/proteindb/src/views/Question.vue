@@ -20,13 +20,13 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <span style="font-size: 20px">Question Submited by:</span>
+                <span style="font-size: 16px">Question Submited by:</span>
             </div>
             <div class="col-sm-2">
-                <span style="font-size: 20px">Submited in:</span>
+                <span style="font-size: 16px">Submited in:</span>
             </div>
             <div class="col-sm-3">
-                <span style="font-size: 20px">Marked as:</span>
+                <span style="font-size: 16px">Marked as:</span>
             </div>
         </div>
         <div class="row">
@@ -40,11 +40,11 @@
             </div>
             <div class="col-sm-1 show-item" style="display: none"></div>
             <div class="col-sm-2">
-                <span class="ans-date">{{currentQuestion.date}}</span>
+                <span class="ans-date" style="font-size: 15px">{{currentQuestion.date}}</span>
             </div>
             <div class="col-sm-3">
                 <span v-if="currentQuestion.answeredStatus>=0" span style="font-size: 20px; color: grey;">Answered ✔️</span>
-                <span v-else-if="currentQuestion.answeredStatus<0" span style="font-size: 20px; color: grey;">Not Answered</span>
+                <span v-else-if="currentQuestion.answeredStatus<0" span style="font-size: 15px; color: grey;">Not Answered</span>
             </div>
         </div>
         <br>

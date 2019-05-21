@@ -74,6 +74,14 @@ body{
 
 }
 
+.home-question-ans-profile
+{
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    border: 3px solid #00B4CC;
+    padding: 10px;
+}
+
 .home-question-ans .question-tabs
 {   color: grey !important;
     font-family: 'Baloo Bhai', cursive !important;

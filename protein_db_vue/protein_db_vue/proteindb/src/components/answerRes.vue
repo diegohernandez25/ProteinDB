@@ -1,15 +1,14 @@
 
-
-
 <template>
     <div class="result-item-answer">
         <div>
             <h2>{{answer.question}}</h2>
 
             <div>
-                <button type="button" class="btn btn-primary  grey-button"><i class="fas fa-pencil-alt"></i></button>
+                <button type="button" class="btn add-button"><i class="fas fa-pencil-alt"></i></button>
             </div>
         </div>
+
         <div class="profile-answers-item">
             <img src="../assets/images/profile.jpg" alt="">
             <div>
@@ -23,8 +22,8 @@
         <div class="result-item-answer-bottom-row">
             <a href="">more</a>
             <div>
-                <div>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-up"></i></button> {{answer.upvotes}} </div>
-                <div>  <button type="button" class="btn btn-primary grey-button"><i class="fas fa-thumbs-down"></i></button> {{answer.downvotes}} </div>
+                <div>  <button type="button" class="btn add-button"><i class="fas fa-thumbs-up"></i></button> {{answer.upvotes}} </div>
+                <div>  <button type="button" class="btn add-button"><i class="fas fa-thumbs-down"></i></button> {{answer.downvotes}} </div>
             </div>
         </div>
     </div>
@@ -32,20 +31,19 @@
 
 <script>
 
-
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
-    name: 'answerPrev',
-    props: {
-        answer: Object
-    },
+  name: 'answerPrev',
+  props: {
+    answer: Object
+  },
 
-    computed: {
+  computed: {
     ...mapState([
 
-    ]),
-    }
+    ])
+  }
 }
 </script>
 

@@ -1,34 +1,35 @@
 <template>
   <div class="profile">
-  <div class=screen>
+  <div class="screen">
 
-    <div class=main-content>
-        <div class=profile-info>
+    <div class="main-content">
+        <div class=profile-info style="color: gray">
             <div class=profile-img >
                 <img src="../assets/images/profile.jpg" alt="">
             </div>
             <div class=info-container>
                 <h1>{{currentUser.name}}</h1>
                 <div class=info-uni>
-                    <i class="fas fa-university"></i> <b> University: </b> {{currentUser.university}}
+                    <i class="fas fa-university" style="color: black"></i> <b style="color: black"> University: </b> {{currentUser.university}}
                 </div>
                 <div class=info-job>
-                    <i class="fas fa-user-tie"></i> <b> Job:</b> {{currentUser.job}}
+                    <i class="fas fa-user-tie" style="color: black"></i> <b style="color: black"> Job:</b> {{currentUser.job}}
                 </div>
                 <div class=description>
-                    <i class="far fa-file-alt"></i> <b>Description:</b>  {{currentUser.description}}
+                    <i class="far fa-file-alt" style="color: black"></i> <b style="color: black"> Description:</b>  {{currentUser.description}}
                 </div>
                 <div class=profile-edit>
-                    <button type="button" class="btn btn-primary blue-button"><i class="fas fa-pencil-alt"></i> Edit</button>
+                    <button type="button" class="btn btn-primary add-button"><i class="fas fa-pencil-alt"></i> Edit</button>
                 </div>
             </div>
         </div>
 
         <div class=nav-button-row>
-            <button ref="Projects" @click="state='Projects'; clearRefs($event)" type="button" class="btn btn-primary blue-button myactive">Project</button>
-            <button ref="Questions" @click="state='Questions'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Questions</button>
-            <button ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Answers</button>
-         </div>
+            <button  style="background-color: #00B4CC; color: white" ref="Projects" @click="state='Projects'; clearRefs($event)" type="button" class="btn ">Project</button>
+            <button style="background-color: #00B4CC; color: white" ref="Questions" @click="state='Questions'; clearRefs($event)" type="button" class="btn">Questions</button>
+            <!--<button ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Answers</button>-->
+          <button style="background-color: #00B4CC; color: white" ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn">Answers</button>
+        </div>
 
         <div class=filter-row>
                 <select @change="onChange($event)">
@@ -56,20 +57,22 @@
             </div>
 
             <div v-else>
-                
-                <div class="questions" v-for="(question,index) in filteredQuestions" v-bind:key="index">
-                     
-                    <questionPrev
-                        :question=question
-                    />
+
+                <div class="questions container home-question-ans-profile" style="max-width:2400px;margin-top: 20px!important;" v-for="(question,index) in filteredQuestions" v-bind:key="index">
+                    <!--<div style="margin: 10px">-->
+                      <questionPrevProfile
+                          :question=question
+                      />
+                    <!--</div>-->
                 </div>
+              <br>
             </div>
             <br>
             <br>
 
                 <div class="prev-next">
-                  <button type="button" class="btn btn-primary blue-button side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-                  <button type="button" class="btn btn-primary blue-button side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button style="background-color: #00B4CC; color: white" type="button" class="btn  side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button style="background-color: #00B4CC; color: white" type="button" class="btn  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
         </div>
     </div>
@@ -80,17 +83,17 @@
 <script>
 // @ is an alias to /src
 
-import {mapState, mapGetters} from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import projRes from '@/components/projRes.vue'
 import answerRes from '@/components/answerRes.vue'
-import questionPrev from '@/components/questionPrev.vue'
+import questionPrevProfile from '@/components/questionPrevProfile.vue'
 
 export default {
   name: 'profile',
   components: {
-      projRes,
-      answerRes,
-      questionPrev
+    projRes,
+    answerRes,
+    questionPrevProfile
   },
 
   data () {
@@ -114,14 +117,13 @@ export default {
       }
     },
 
-    clearRefs(event){
-       // console.log()
-        this.$refs['Projects'].classList.remove("myactive");
-        this.$refs['Answers'].classList.remove("myactive");
-        this.$refs['Questions'].classList.remove("myactive");
-        event.target.classList.add("myactive")
+    clearRefs (event) {
+      // console.log()
+      this.$refs['Projects'].classList.remove('myactive')
+      this.$refs['Answers'].classList.remove('myactive')
+      this.$refs['Questions'].classList.remove('myactive')
+      event.target.classList.add('myactive')
     }
-
 
   },
 
@@ -133,11 +135,11 @@ export default {
     ]),
 
     ...mapGetters([
-        'getUserQuestions'
+      'getUserQuestions'
     ]),
 
-    listOfQuestions: function(){
-        return this.getUserQuestions("Frederico");
+    listOfQuestions: function () {
+      return this.getUserQuestions('Frederico')
     },
     /*
     currentUser: function(){
@@ -200,7 +202,6 @@ export default {
 
 <style>
  @import '../assets/css/profile.css';
-
 
 .questions{
     display:flex;

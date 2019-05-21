@@ -59,7 +59,7 @@
         </div>
     </div>-->
     <!--Question section-->
-    <div class="container" >
+    <div class="container" style="padding-top: 10px">
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
@@ -75,9 +75,11 @@
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
                 <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
             </div>
-
+            <hr style="border-top: 1px solid;">
             <div class="row" style="padding-left: 5%; padding-top: 3%">
-                <input  v-model="questionForm.body" type="text" class="question-text" placeholder="Explain more details about your question.">
+                <!--<input  v-model="questionForm.body" type="text" class="question-text" placeholder="Explain more details about your question.">-->
+                <textarea v-model="questionForm.body" class="form-control write-answer" id="exampleFormControlTextarea3" placeholder="Write details of your question" rows="7"
+                        style="border: none"></textarea>
             </div>
             <div class="row" style="padding-left: 5%; padding-top: 3%">
                 <div class="col-sm-9">
