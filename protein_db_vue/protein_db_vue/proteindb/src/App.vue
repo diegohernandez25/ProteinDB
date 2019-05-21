@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <!--<a class="navbar-brand text-style" style="padding-top: 2%" href="#">ProteinDB</a>-->
-        <a class="my-navbar-brand" style="color: #4C4C4C;padding-top: 2%; font-family: 'Baloo Bhai', cursive;">ProteinDB</a>
+        <a class="my-navbar-brand" href="/" style="color: #4C4C4C;padding-top: 2%; font-family: 'Baloo Bhai', cursive;">ProteinDB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #4C4C4C" href="#">
+              <a class="nav-link" style="color: #4C4C4C" href="/createproject">
                 Create Project
               </a>
             </li>
