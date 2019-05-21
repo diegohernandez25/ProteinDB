@@ -117,8 +117,8 @@
             <span style="font-size: 20px">{{param}}</span>
 
           </div>
-          <!--
-          <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+          
+          <div v-if="$route.query.publications=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
@@ -316,9 +316,9 @@
               </div>
             </div>
           </div>
-  -->
-          <!--
-          <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+  
+          
+          <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
@@ -483,8 +483,8 @@
               </div>
             </div>
           </div>
-    -->
-          <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+          
+          <div v-if="$route.query.proteins=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
@@ -666,7 +666,7 @@ export default {
       var list=[]
       console.log(this.$route.query)
       for(var param in this.$route.query){
-        if(this.$route.query[param]!="false"){
+        if(this.$route.query[param]!="false" && param!="searchText"){
           list.push(param)
         }
       }
