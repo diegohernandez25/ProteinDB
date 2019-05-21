@@ -84,7 +84,7 @@
                     <input type="text" class="tag-text" placeholder="➕ add tag" style="width: 12%">
                 </div>
                 <div class="col-sm-3">
-                    <button @click="submitNewQuestion()" type="submit" class="submit-question">
+                    <button @click="submitNewQuestion();" type="submit" class="submit-question">
                         Submit
                     </button>
                 </div>
@@ -213,8 +213,9 @@ export default {
             this.index=0;
         },
 
-        submitNewQuestion(){
 
+        submitNewQuestion(){
+            
             if(this.questionForm.title!=''){
                 this.addQuestion(this.questionForm);
                 alert("Your question was submited")
@@ -240,9 +241,6 @@ export default {
       this.index = 0
     },
 
-    submitNewQuestion () {
-      this.addQuestion(question)
-    }
 
   },
 

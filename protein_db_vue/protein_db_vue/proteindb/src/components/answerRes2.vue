@@ -66,6 +66,7 @@ export default {
     ]),
 
     getID(){
+        console.log(this.answer2.author)
         let uN= this.answer2.author
         return this.getIDbyUserName(uN)
     },
