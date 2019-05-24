@@ -27,29 +27,27 @@
 
 <script>
 
-
-import {mapState, mapGetters} from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
-    name: 'questionPrev',
-    props: {
-        project: Object
-    },
+  name: 'questionPrev',
+  props: {
+    project: Object
+  },
 
-    computed: {
+  computed: {
     ...mapState([
     ]),
 
     ...mapGetters([
-        'getProjecIDtByName'
+      'getProjecIDtByName'
     ]),
 
-    idByName(){
-        return this.getProjecIDtByName(this.project.name);
+    idByName () {
+      return this.getProjecIDtByName(this.project.name)
     }
 
-
-    }
+  }
 }
 </script>
 

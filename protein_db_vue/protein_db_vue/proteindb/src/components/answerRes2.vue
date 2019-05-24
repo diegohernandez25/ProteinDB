@@ -19,11 +19,6 @@
             </div>
         </div>
 
-
-
-
-
-
         <div class="row">
             <div class="col-sm-1 hide-item">
                 <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
@@ -70,10 +65,10 @@ export default {
       'getIDbyUserName'
     ]),
 
-    getID(){
-        console.log(this.answer2.author)
-        let uN= this.answer2.author
-        return this.getIDbyUserName(uN)
+    getID () {
+      console.log(this.answer2.author)
+      let uN = this.answer2.author
+      return this.getIDbyUserName(uN)
     },
 
     userInfo: function () {

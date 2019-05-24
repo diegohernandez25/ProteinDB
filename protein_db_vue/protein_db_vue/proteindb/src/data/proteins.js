@@ -1,6 +1,5 @@
-export default[
-    {
-        name:"Oxytocin"
-    }
-
+export default [
+  {
+    name: 'Oxytocin'
+  }
 ]
