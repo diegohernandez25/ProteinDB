@@ -194,32 +194,19 @@
 
             <br>
             <br>
-            <div class="container" style="padding-top: 1%; padding-bottom: 2%">
+            <div class="container" style="padding-top: 1%; ">
               <div class="row">
                 <div class="col-sm-9">
                 </div>
-                <div class="col-sm-1">
-                  <div class="center-con" style="transform: rotate(180deg)" >
-                    <div class="round">
-                      <div id="cta-back2" >
-                        <span class="arrow primera next "></span>
-                        <span class="arrow segunda next "></span>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-sm-1" >
+                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
-                <span style="font-family: 'Baloo Bhai', cursive;font-size: 20px; color: #4C4C4C">3</span>
-                <div class="col-sm-1">
-                  <div class="center-con" >
-                    <div class="round">
-                      <div id="cta2">
-                        <span class="arrow primera next "></span>
-                        <span class="arrow segunda next "></span>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-sm-1 label-text" style="text-align: center; " >
+                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
                 </div>
-
+                <div class="col-sm-1" >
+                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -301,23 +288,21 @@
 
             <br>
             <br>
-            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
-              <div class="row">
-                <div class="col-sm-9">
-                </div>
-                <div class="col-sm-1">
-                  <div v-on:click="next()">
-                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
-                  </div>
-                </div>
-                <div class="col-sm-1" >
-                  <div v-on:click="prev()">
-                    <button style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+             <div class="container" style="padding-top: 1%; ">
+               <div class="row">
+                 <div class="col-sm-9">
+                 </div>
+                 <div class="col-sm-1" >
+                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                 </div>
+                 <div class="col-sm-1 label-text" style="text-align: center; " >
+                   <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                 </div>
+                 <div class="col-sm-1" >
+                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                 </div>
+               </div>
+             </div>
           </div>
 
           <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
@@ -446,19 +431,18 @@
             </div>
             <br>
             <br>
-            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
+            <div class="container" style="padding-top: 1%; ">
               <div class="row">
                 <div class="col-sm-9">
                 </div>
-                <div class="col-sm-1">
-                  <div v-on:click="next()">
-                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
-                  </div>
+                <div class="col-sm-1" >
+                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                </div>
+                <div class="col-sm-1 label-text" style="text-align: center; " >
+                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <div v-on:click="prev()">
-                    <button style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-                  </div>
+                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -538,7 +522,6 @@
             </div>
             <br>
 
-
             <div v-for="(protein,index) in filteredProteinList" v-bind:key="index">
             <div class="container home-question-ans">
               <div class="row protein-content">
@@ -584,19 +567,163 @@
             </div>
             <br>
             </div>
-            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
+            <div class="container" style="padding-top: 1%; ">
               <div class="row">
                 <div class="col-sm-9">
                 </div>
-                <div class="col-sm-1">
-                  <div v-on:click="next()">
-                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
-                  </div>
+                <div class="col-sm-1" >
+                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                </div>
+                <div class="col-sm-1 label-text" style="text-align: center; " >
+                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <div v-on:click="prev()">
-                    <button style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+            <div style="margin-top: 15px">
+                    <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
+                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
+                        in <span style="color: gray">Users!</span></span>
+              <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
+                      style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
+            </div>
+            <br>
+            <div class="container filter-container" >
+
+                    <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
+                    font-family: 'Baloo Bhai', cursive;">Search By:</span>
+
+              <div class="row">
+                <div class="col-sm-3">
+                  <label>Institute/University:</label>
+                </div>
+                <div class="col-sm-3">
+                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">
+                  <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
+                          style="font-size: 20px;">Filter️️</button>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div v-for="(protein,index) in filteredProteinList" v-bind:key="index">
+              <div class="container home-question-ans">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class=profile-img-search >
+                      <img src="../assets/images/profile.jpg" alt="">
+                    </div>
                   </div>
+                  <div class="col-sm-9">
+                    <div class="container">
+                      <div class="row">
+                        <h2 class="filter-label">Frederico</h2>
+                      </div>
+                      <div class="row">
+                        <h5 class="filter-label" style="font-size: 20px">University of Aveiro</h5>
+                      </div>
+                      <div class="row">
+                        <a href="#">more...</a>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Number of Projects:</div>
+                        <div class="col-sm-4">Number of Questions:</div>
+                        <div class="col-sm-4">Number of Answers:</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4" style="color:gray"> 3 </div>
+                        <div class="col-sm-4" style="color:gray"> 0 </div>
+                        <div class="col-sm-4" style="color:gray"> 52 </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="container" style="padding-top: 1%; ">
+              <div class="row">
+                <div class="col-sm-9">
+                </div>
+                <div class="col-sm-1" >
+                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                </div>
+                <div class="col-sm-1 label-text" style="text-align: center; " >
+                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                </div>
+                <div class="col-sm-1" >
+                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+            <div style="margin-top: 15px">
+                    <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
+                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
+                        in <span style="color: gray">Users!</span></span>
+              <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
+                      style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
+            </div>
+            <br>
+            <div>
+              <div class="container home-question-ans ">
+                <div class="row question-tabs" style="padding-left: 10px">
+                  Question?
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text">
+                      dwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedwdwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedwdwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedw
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <span style="font-size: 16px">Question Submited by:</span>
+                  </div>
+                  <div class="col-sm-2">
+                    <span style="font-size: 16px">Submited in:</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-1 hide-item">
+                    <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
+                  </div>
+                  <div class="col-sm-5">
+                    <p class="avatar-name-ans">Frederico Gratinad</p>
+                    <span class="avatar-workplace">University of Aveiro - Biologia</span>
+                  </div>
+                  <div class="col-sm-3">
+                    <span class="ans-date" style="font-size: 15px">25-031996</span>
+                  </div>
+                  <div class="col-sm-2">
+                    <a href="#"> 3 more answers</a>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </div>
+            <div class="container" style="padding-top: 1%; ">
+              <div class="row">
+                <div class="col-sm-9">
+                </div>
+                <div class="col-sm-1" >
+                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  </div>
+                <div class="col-sm-1 label-text" style="text-align: center; " >
+                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                </div>
+                <div class="col-sm-1" >
+                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -637,7 +764,6 @@ export default {
       'getProjecIDtByName'
     ]),
 
-
     listOfParams () {
       var list = []
       console.log(this.$route.query)
@@ -669,4 +795,16 @@ export default {
 
 <style scoped>
 
+</style>
+
+<style>
+  .row {
+    margin: 2px 0;
+  }
+
+  .text {
+
+    overflow: hidden;
+    word-wrap: break-word;
+  }
 </style>

@@ -2,7 +2,7 @@
   <div class="home">
     <!--Question section-->
 
-    <div class="container" style="padding-top: 10px">
+    <div class="container" style="padding-top: 10px; padding-left: 3%">
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
@@ -15,7 +15,6 @@
                 </div>
 
             </div>
-
 
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
                 <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
@@ -76,24 +75,21 @@
             </div>
           </div>
         </b-tab>
-        <div class="container" style="padding-top: 2px; margin-bottom: 3%">
-                <div class="row">
-                    <div class="col-sm-9">
-                    </div>
-                    <div class="col-sm-1">
-                      <div v-on:click="next()">
-                        <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
-                      </div>
-                    </div>
-                    <div class="col-sm-1">
-                      <div v-on:click="prev()">
-                        <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-                      </div>
-                    </div>
-                </div>
+        <div class="container" style="padding-top: 1%; ">
+          <div class="row">
+            <div class="col-sm-9">
             </div>
-            <br>
-            <br>
+            <div class="col-sm-1" >
+              <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div class="col-sm-1 label-text" style="text-align: center; " >
+              <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+            </div>
+            <div class="col-sm-1" >
+              <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
      </b-tabs>
     </div>
 
@@ -112,24 +108,23 @@ export default {
     Question
   },
 
-   data() {
-      return {
-        fields: ['title'],
-        index: 0,
-        tabIndex:0,
-        questionForm: {
-                title: '',
-                body: '',
-                author: 'Frederico',
-                answers: [],
-                date: '01-01-2019',
-                views:0,
-                answeredStatus:-1
-            },
-        showDismissibleAlert: false
-      }
-    },
-
+  data () {
+    return {
+      fields: ['title'],
+      index: 0,
+      tabIndex: 0,
+      questionForm: {
+        title: '',
+        body: '',
+        author: 'Frederico',
+        answers: [],
+        date: '01-01-2019',
+        views: 0,
+        answeredStatus: -1
+      },
+      showDismissibleAlert: false
+    }
+  },
 
   methods: {
     ...mapActions([
@@ -178,7 +173,7 @@ export default {
         views: 0,
         answeredStatus: -1
       }
-      this.$router.replace("/question/" + page_id);
+      this.$router.replace('/question/' + page_id)
     },
 
     resetIndex: function () {
