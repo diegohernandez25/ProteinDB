@@ -81,6 +81,7 @@
                     name="checkbox-3"
                     value=true
                     unchecked-value=false
+                    
                     >
                     Publications
                     </b-form-checkbox>  

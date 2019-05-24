@@ -10,7 +10,7 @@
                 <p>
                     {{question.body}}
                 </p>
-                <a href="#" >more...</a>
+                <router-link :to="`/question/${getID}`">more...</router-link>
             </div>
             <br>
 
@@ -37,7 +37,7 @@
                 <span class="ans-date" style="font-size: 15px">{{question.date}}</span>
             </div>
             <div class="col-sm-2">
-                <a href="#">{{question.answers.length}} answers.</a>
+                <p>{{question.answers.length}} answers.</p>
             </div>
         </div>
         <br>

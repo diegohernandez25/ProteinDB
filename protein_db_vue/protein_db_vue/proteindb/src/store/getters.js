@@ -61,5 +61,40 @@ export default {
     return state['questions'].filter(function (question) {
       return (question.author == userName)
     })
-  }
+  },
+
+  getfilteredProjectList: (state) => (filter) => {
+    console.log('in filtering...')
+    let myfilter = filter;
+    return state['projects'].filter(function (project) { 
+      let projName = project.name.toLowerCase()
+      return projName.includes(myfilter)
+    })
+  },
+  getfilteredUserList: (state) => (filter) => {
+    console.log('in filtering...')
+    let myfilter = filter;
+    return state['users'].filter(function (user) { 
+      let userName = user.name.toLowerCase()
+      return userName.includes(myfilter)
+    })
+  },
+  getfilteredProteinList: (state) => (filter) => {
+    console.log('in filtering...')
+    let myfilter = filter;
+    return state['proteins'].filter(function (protein) { 
+      let protName = protein.name.toLowerCase()
+      return protName.includes(myfilter)
+    })
+  },
+
+  getfilteredQuestionList: (state) => (filter) => {
+    console.log('in filtering...')
+    let myfilter = filter;
+    return state['questions'].filter(function (question) { 
+      let questTitle = quest.title.toLowerCase()
+      return questTitle.includes(myfilter)
+    })
+  },
+
 }

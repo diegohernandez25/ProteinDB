@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <!--Question section-->
-    <div class="container" style="padding-top: 10px;padding-left: 3%">
+
+    <div class="container" style="padding-top: 10px">
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
@@ -14,6 +15,8 @@
                 </div>
 
             </div>
+
+
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
                 <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
             </div>
@@ -22,12 +25,16 @@
                 <!--<input  v-model="questionForm.body" type="text" class="question-text" placeholder="Explain more details about your question.">-->
                 <textarea v-model="questionForm.body" class="form-control write-answer" id="exampleFormControlTextarea3" placeholder="Write details of your question" rows="7"
                         style="border: none"></textarea>
+                <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+            You can't submit an empty question!
+            </b-alert>
             </div>
             <div class="row" style="padding-left: 5%; padding-top: 3%">
                 <div class="col-sm-9">
                     <input type="text" class="tag-text" placeholder="➕ add tag" style="width: 12%">
                 </div>
                 <div class="col-sm-3">
+
                     <button @click="submitNewQuestion();" type="submit" class="submit-question">
                         Submit
                     </button>
@@ -105,22 +112,24 @@ export default {
     Question
   },
 
-  data () {
-    return {
-      fields: ['title'],
-      index: 0,
-      tabIndex: 0,
-      questionForm: {
-        title: '',
-        body: '',
-        author: 'Frederico',
-        answers: [],
-        date: '01-01-2019',
-        views: 0,
-        answeredStatus: -1
+   data() {
+      return {
+        fields: ['title'],
+        index: 0,
+        tabIndex:0,
+        questionForm: {
+                title: '',
+                body: '',
+                author: 'Frederico',
+                answers: [],
+                date: '01-01-2019',
+                views:0,
+                answeredStatus:-1
+            },
+        showDismissibleAlert: false
       }
-    }
-  },
+    },
+
 
   methods: {
     ...mapActions([
