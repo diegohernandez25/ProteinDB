@@ -50,7 +50,7 @@
           id="input-3"
           v-model="form.priv"
           :options="privL"
-   
+
         ></b-form-select>
       </b-form-group>
       <b-button @click="onSubmit" class="add-button">Submit</b-button>
@@ -80,10 +80,10 @@ export default {
         members: ["Frederico"],
         proteins: '',
         priv:'',
-       
+
       },
-      roles: [ 'Private', 'Public'],
-      privL: [ 'Manager', 'Member'],
+      privL: [ 'Private', 'Public'],
+      roles: [ 'Manager', 'Member'],
       show: true
     }
   },
@@ -93,13 +93,13 @@ export default {
     ...mapActions([
             'addProject'
         ]),
-    
+
     onSubmit () {
     if(this.form.name=='' || this.form.privacy==''){
       alert("Name and Privacy have to have a value");
     }
     else{
-      let payload={ 
+      let payload={
       name: this.form.name,
       description: "",
       manager: "Frederico",
@@ -121,11 +121,11 @@ export default {
       this.form.members= ["Frederico"];
       this.form.proteins='';
       this.form.priv='';
-     
+
 
     }
 
-    
+
 
     },
 
@@ -141,7 +141,7 @@ export default {
       }
     },
 
-   
+
   }
 }
 </script>

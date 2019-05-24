@@ -111,17 +111,17 @@
                 font-family: 'Baloo Bhai', cursive;">Chosen Filters</a>
           </div>
           <div v-for="(param,index) in listOfParams" v-bind:key="index">
-           
-            
+
+
             <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
             <span style="font-size: 20px">{{param}}</span>
 
           </div>
-          
+
           <div v-if="$route.query.publications=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
+                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
                         in <span style="color: gray">Publication</span></span>
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
@@ -316,12 +316,12 @@
               </div>
             </div>
           </div>
-  
-          
+
+
           <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
+                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
                         in <span style="color: gray">Project</span></span>
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
@@ -483,11 +483,11 @@
               </div>
             </div>
           </div>
-          
+
           <div v-if="$route.query.proteins=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"Frederico Gratinad"</span>
+                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
                         in <span style="color: gray">Proteins</span></span>
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
@@ -567,7 +567,7 @@
                             <router-link :to="'/protein/0'" class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">{{protein.name}}</router-link>
                   in <span style="color: gray">Proteins</span>
-                  <p>Oxytocin (Oxt) is a peptide hormone and neuropeptide. Oxytocin is normally produced in the hypothalamus and released by the posterior pituitary.[3] It plays a role in social bonding, 
+                  <p>Oxytocin (Oxt) is a peptide hormone and neuropeptide. Oxytocin is normally produced in the hypothalamus and released by the posterior pituitary.[3] It plays a role in social bonding,
                   </p>
                   <p><a href="#">more...</a></p>
                 </div>
