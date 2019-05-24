@@ -124,7 +124,7 @@
     </div>
 </div>
 
-<div  class="container-fluid all-answers normal-container-fluid" >
+<div  class="container all-answers normal-container-fluid" >
     <div v-if="getCorrectAnswer != null">
     <div class="container">
         <div class="row">
@@ -174,34 +174,21 @@
     </div>
     <br>
 
-    <div class="container" style="padding-top: 5%; padding-bottom: 2%">
-        <div class="row">
-            <div class="col-sm-9">
-            </div>
-            <div class="col-sm-1">
-                <div class="center-con" style="transform: rotate(180deg)" >
-                    <div class="round">
-                        <div id="cta-back2" >
-                            <span class="arrow primera next "></span>
-                            <span class="arrow segunda next "></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-1">
-                <div class="center-con" >
-                    <div class="round">
-                        <div id="cta2">
-                            <span class="arrow primera next "></span>
-                            <span class="arrow segunda next "></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-1">
-
-            </div>
+    <div class="container" style="padding-top: 5%; padding-bottom: 4%">
+      <div class="row">
+        <div class="col-sm-10">
         </div>
+        <div class="col-sm-1">
+          <div v-on:click="next()">
+            <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div v-on:click="prev()">
+            <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
     <br>
 </div>

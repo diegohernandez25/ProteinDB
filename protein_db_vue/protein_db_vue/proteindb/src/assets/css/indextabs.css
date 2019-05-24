@@ -1,7 +1,7 @@
 
 #container{
     margin: 100px auto;
-    width: 90%;
+    width: 100%;
     text-align: left;
     position: relative;
 }
@@ -12,7 +12,7 @@
     background-color: #fff;
     font: 17pt Georgia,Times,serif;
     color: #333;
-    padding: 7px;
+    /*padding: 7px;*/
     /*margin: 20px;*/
     width: 100%;
 

@@ -90,9 +90,21 @@
 
               </div>
             </div>
-            <div class="prev-next">
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
+              <div class="row">
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="next()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  </div>
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="prev()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <br>
@@ -148,9 +160,21 @@
 
               </div>
             </div>
-            <div class="prev-next">
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
+              <div class="row">
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="next()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  </div>
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="prev()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <br>
@@ -230,9 +254,21 @@
                 </div>
               </div>
             </div>
-            <div class="prev-next">
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-              <button type="button" class="btn add-button side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+            <div class="container" style="padding-top: 1%; padding-bottom: 7%">
+              <div class="row">
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="next()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  </div>
+                </div>
+                <div class="col-sm-1">
+                  <div v-on:click="prev()">
+                    <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

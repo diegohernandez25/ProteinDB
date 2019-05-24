@@ -572,29 +572,18 @@
               </div>
             </div>
           </div>
-          <div class="container" style="padding-top: 1%; padding-bottom: 2%">
+          <div class="container" style="padding-top: 1%; padding-bottom: 7%">
             <div class="row">
-              <div class="col-sm-9">
+              <div class="col-sm-10">
               </div>
               <div class="col-sm-1">
-                <div class="center-con" style="transform: rotate(180deg)" >
-                  <div class="round">
-                    <div id="cta-back2" >
-                      <span class="arrow primera next "></span>
-                      <span class="arrow segunda next "></span>
-                    </div>
-                  </div>
+                <div v-on:click="next()">
+                  <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
               </div>
-              <span style="font-family: 'Baloo Bhai', cursive;font-size: 20px; color: #4C4C4C">3</span>
               <div class="col-sm-1">
-                <div class="center-con" >
-                  <div class="round">
-                    <div id="cta2">
-                      <span class="arrow primera next "></span>
-                      <span class="arrow segunda next "></span>
-                    </div>
-                  </div>
+                <div v-on:click="prev()">
+                  <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>

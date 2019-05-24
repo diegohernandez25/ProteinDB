@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!--Question section-->
-    <div class="container" style="padding-top: 10px">
+    <div class="container" style="padding-top: 10px;padding-left: 3%">
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
@@ -71,7 +71,7 @@
         </b-tab>
         <div class="container" style="padding-top: 2px; margin-bottom: 3%">
                 <div class="row">
-                    <div class="col-sm-10">
+                    <div class="col-sm-9">
                     </div>
                     <div class="col-sm-1">
                       <div v-on:click="next()">
