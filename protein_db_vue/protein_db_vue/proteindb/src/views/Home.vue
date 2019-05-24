@@ -59,6 +59,7 @@
         </div>
     </div>-->
     <!--Question section-->
+    
     <div class="container" style="padding-top: 10px">
         <div class="ask">
             <div class="row">
@@ -72,6 +73,8 @@
                 </div>
 
             </div>
+
+             
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
                 <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
             </div>
@@ -80,12 +83,16 @@
                 <!--<input  v-model="questionForm.body" type="text" class="question-text" placeholder="Explain more details about your question.">-->
                 <textarea v-model="questionForm.body" class="form-control write-answer" id="exampleFormControlTextarea3" placeholder="Write details of your question" rows="7"
                         style="border: none"></textarea>
+                <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+            You can't submit an empty question!
+            </b-alert>
             </div>
             <div class="row" style="padding-left: 5%; padding-top: 3%">
                 <div class="col-sm-9">
                     <input type="text" class="tag-text" placeholder="➕ add tag" style="width: 12%">
                 </div>
                 <div class="col-sm-3">
+                    
                     <button @click="submitNewQuestion();" type="submit" class="submit-question">
                         Submit
                     </button>
@@ -134,7 +141,7 @@
                     </div>
                     <div class="col-sm-1">
                         <div class="center-con" >
-                            <div v-on:click="next()" class="round">
+                            <div v-if="this.index" v-on:click="next()" class="round">
                                 <div id="cta">
                                     <span class="arrow primera next "></span>
                                     <span class="arrow segunda next "></span>
@@ -181,6 +188,7 @@ export default {
                 views:0,
                 answeredStatus:-1
             },
+        showDismissibleAlert: false
       }
     },
 
@@ -218,10 +226,11 @@ export default {
             
             if(this.questionForm.title!=''){
                 this.addQuestion(this.questionForm);
-                alert("Your question was submited")
+                alert("Your question was submited");
+                
             }
             else{
-                alert("You can't submit an empty question")
+                this.showDismissibleAlert= true;
             }
             this.questionForm= {
                 title: '',
