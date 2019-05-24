@@ -610,26 +610,26 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Protein',
-  data(){
-    return{
+  data () {
+    return {
 
     }
   },
 
-  computed:{
-     ...mapGetters([
+  computed: {
+    ...mapGetters([
       'getProteinByID'
     ]),
 
-    protein(){
-      return this.getProteinByID(this.$route.params.id);
+    protein () {
+      return this.getProteinByID(this.$route.params.id)
     }
 
-}
+  }
 
 }
 </script>

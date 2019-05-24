@@ -1,63 +1,5 @@
 <template>
   <div class="home">
-    <!--Search box-->
-    <!--<div class="container" style="padding-bottom: -100%">
-        <div class="wrapHomeCellPhone">
-            <div class="searchHome">
-                <input type="text" class="searchTermHome" placeholder="What are you looking for?">
-                <button type="submit" class="searchButtonHome">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-
-            <div class="row hide-item" style="padding-top: 2%">
-                <div class="col-sm-1" style=""></div>
-                <div class="col-sm-1" style="padding-left:1%; padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">All</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Proteins</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 12%">
-                    <div class="form-check">
-                        <label style="width: 120px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Publications</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Author</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Question</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-sm-1" style="padding-right: 10%">
-                    <div class="form-check">
-                        <label style="width: 100px">
-                            <input type="checkbox" name="check" checked> <span class="label-text">Project</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>-->
     <!--Question section-->
     <div class="container" style="padding-top: 10px">
         <div class="ask">
@@ -118,6 +60,15 @@
             </div>
           </div>
         </b-tab>
+        <b-tab @click="tabIndex=1; resetIndex()" title="My Questions">
+          <div id='My_Questions' class="tab-content">
+            <div v-for="(question, index) in getMyQuestions('Frederico')" v-bind:key="index" class=question >
+              <Question
+                :question="question"
+              />
+            </div>
+          </div>
+        </b-tab>
         <div class="container" style="padding-top: 5%; padding-bottom: 2%">
                 <div class="row">
                     <div class="col-sm-9">
@@ -151,7 +102,7 @@
             <br>
      </b-tabs>
     </div>
-    
+
   </div>
 </template>
 
@@ -159,7 +110,7 @@
 // @ is an alias to /src
 import Question from '@/components/questionPrev.vue'
 
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'home',
@@ -167,80 +118,76 @@ export default {
     Question
   },
 
-   data() {
-      return {
-        fields: ['title'],
-        index: 0,
-        tabIndex:0,
-        questionForm: {
-                title: '',
-                body: '',
-                author: 'Frederico',
-                answers: [],
-                date: '01-01-2019',
-                views:0,
-                answeredStatus:-1
-            },
+  data () {
+    return {
+      fields: ['title'],
+      index: 0,
+      tabIndex: 0,
+      questionForm: {
+        title: '',
+        body: '',
+        author: 'Frederico',
+        answers: [],
+        date: '01-01-2019',
+        views: 0,
+        answeredStatus: -1
+      }
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'addQuestion'
+    ]),
+    ...mapGetters([
+      'getIDbyQuestion'
+    ]),
+
+    next: function () {
+      if (this.tabIndex == 0) {
+        if (this.orderedQuestionsByViews.length > this.index + 3) {
+          this.index += 3
+        }
+      } else {
+        if (this.nonAnswerdQuestions.length > this.index + 3) {
+          this.index += 3
+        }
       }
     },
 
-    methods:{
-        ...mapActions([
-            'addQuestion'
-        ]),
-
-        next: function(){
-            if(this.tabIndex==0){
-                if(this.orderedQuestionsByViews.length>this.index+3){
-                    this.index+=3;
-                }
-            }
-            else{
-                if(this.nonAnswerdQuestions.length>this.index+3){
-                    this.index+=3;
-                }
-            }
-
-        },
-
-        prev: function(){
-            if(this.index>0){
-                this.index-=3;
-            }
-        },
-
-        resetIndex: function(){
-            this.index=0;
-        },
-
-
-        submitNewQuestion(){
-            
-            if(this.questionForm.title!=''){
-                this.addQuestion(this.questionForm);
-                alert("Your question was submited")
-            }
-            else{
-                alert("You can't submit an empty question")
-            }
-            this.questionForm= {
-                title: '',
-                body: '',
-                author: 'Frederico',
-                answers: [],
-                date: '01-01-2019',
-                views:0,
-                answeredStatus:-1
-            }
-
-        },
-
-
+    prev: function () {
+      if (this.index > 0) {
+        this.index -= 3
+      }
+    },
 
     resetIndex: function () {
       this.index = 0
     },
 
+    submitNewQuestion () {
+      if (this.questionForm.title != '') {
+        this.addQuestion(this.questionForm)
+        alert('Your question was submited')
+      } else {
+        alert("You can't submit an empty question")
+      }
+      const page_id = this.getIDbyQuestion(this.questionForm.title)
+      this.questionForm = {
+        title: '',
+        body: '',
+        author: 'Frederico',
+        answers: [],
+        date: '01-01-2019',
+        views: 0,
+        answeredStatus: -1
+      }
+      this.$router.replace("/question/" + page_id);
+    },
+
+    resetIndex: function () {
+      this.index = 0
+    }
 
   },
 
@@ -248,6 +195,14 @@ export default {
     ...mapState([
       'questions'
     ]),
+    ...mapGetters([
+      'getMyQuestions',
+      'getIDbyQuestion'
+    ]),
+
+    getQuestionId: function (questionTitle) {
+      return this.getIDbyQuestion(questionTitle)
+    },
 
     orderedQuestionsByViews: function () {
       return this.questions.sort(function (item1, item2) {

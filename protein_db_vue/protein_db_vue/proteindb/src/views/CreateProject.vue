@@ -14,29 +14,31 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="Add Members:" label-for="input-2">
+      <b-form-group id="input-group-2">
         <div class="row">
           <div class="col-sm-8">
-            <b-form-input
-              id="input-2"
-              v-model="currentMember"
-              placeholder="Enter name or e-mail of members"
-            ></b-form-input>
+            <b-form-group label="Add Members:" label-for="input-2">
+                  <b-form-input
+                    id="input-2"
+                    v-model="currentMember"
+                    placeholder="Enter name or e-mail of members"></b-form-input>
+            </b-form-group>
           </div>
           <div class="col-sm-3">
+            <b-form-group label="Role:" label-for="input-3">
               <b-form-select
-                id="input-4"
+                id="input-3"
                 v-model="role"
                 :options="roles"
               ></b-form-select>
+            </b-form-group>
           </div>
-          <div class="col-sm-1">
+          <div class="col-sm-1" style="margin-top: 10px">
             <button @click="addMember" type="button" class="btn add-button" aria-haspopup="true" aria-expanded="false"
                     style="font-size: 20px;">Add️️</button>
           </div>
         </div>
       </b-form-group>
-
       <b-form-group id="input-group-new-1" label="Register proteins associated with the project:" label-for="input-2">
         <b-form-input
           id="input-new-1"
@@ -68,18 +70,18 @@
 
 <script>
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      currentMember:'',
-      role:'',
+      currentMember: '',
+      role: '',
       form: {
         name: '',
-        //members: [{name:"o", role:""}],
-        members: ["Frederico"],
+        // members: [{name:"o", role:""}],
+        members: ['Frederico'],
         proteins: '',
-        priv:'',
+        priv: ''
 
       },
       privL: [ 'Private', 'Public'],
@@ -88,61 +90,57 @@ export default {
     }
   },
 
-
   methods: {
     ...mapActions([
-            'addProject'
-        ]),
-
+      'addProject'
+    ]),
+    ...mapGetters([
+      'getProjecIDtByName'
+    ]),
     onSubmit () {
-    if(this.form.name=='' || this.form.privacy==''){
-      alert("Name and Privacy have to have a value");
-    }
-    else{
-      let payload={
-      name: this.form.name,
-      description: "",
-      manager: "Frederico",
-      members: this.form.members,
-      institute: "Universidade de Aveiro" ,
-      favourites: 0,
-      updates: 0,
-      articles: [],
-      creationDate: "01-01-2019",
-      privacy: this.form.priv
+      if (this.form.name == '' || this.form.privacy == '') {
+        alert('Name and Privacy have to have a value')
+      } else {
+        let payload = {
+          name: this.form.name,
+          description: '',
+          manager: 'Frederico',
+          members: this.form.members,
+          institute: 'Universidade de Aveiro',
+          favourites: 0,
+          updates: 0,
+          articles: [],
+          creationDate: '01-01-2019',
+          privacy: this.form.priv
+        }
+        console.log('Payload: ', payload);
+        console.log('Project name:', payload.name)
+        this.addProject(payload)
+
+        //TODO: const projId = this.getProjecIDtByName(payload.name)
+        this.currentMember = ''
+        this.role = ''
+        this.form.name = ''
+        this.form.members = ['Frederico']
+        this.form.proteins = ''
+        this.form.priv = ''
+        //TODO: this.$router.replace('/project/' + projId)
       }
-
-      this.addProject(payload);
-      alert("project added");
-
-      this.currentMember='';
-      this.role='';
-      this.form.name='';
-      this.form.members= ["Frederico"];
-      this.form.proteins='';
-      this.form.priv='';
-
-
-    }
-
-
-
     },
 
-    addMember(){
-      if(this.currentMember==''|| this.role==''){
+    addMember () {
+      if (this.currentMember == '' || this.role == '') {
         alert("Member and Role can't be empty")
-      }
-      else{
-        //this.form.members.push({name: this.currentMember, role:this.role})
+      } else {
+        // this.form.members.push({name: this.currentMember, role:this.role})
         this.form.members.push(this.currentMember)
-        this.currentMember='';
-        this.role='';
+        this.currentMember = ''
+        this.role = ''
       }
-    },
+    }
 
+  },
 
-  }
 }
 </script>
 

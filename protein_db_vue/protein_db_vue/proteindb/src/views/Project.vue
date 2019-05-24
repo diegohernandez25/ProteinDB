@@ -98,7 +98,7 @@
             <br>
           </div>
           <br>
-          
+
           <div class="container articles-section">
 
             <div class="project-info-header">
@@ -155,8 +155,6 @@
 
             <br>
           </div>
-
-          
 
           <br>
           <div class="container articles-section">
@@ -248,30 +246,28 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Project',
-  data(){
-    return{
+  data () {
+    return {
 
     }
   },
 
   methods: {
-   
+
   },
 
-  computed:{
-     ...mapGetters([
+  computed: {
+    ...mapGetters([
       'getProjectByID'
     ]),
 
-    project(){
-      console.log(this.$route.params.id);
-      return this.getProjectByID(this.$route.params.id);
+    project () {
+      console.log(this.$route.params.id)
+      return this.getProjectByID(this.$route.params.id)
     }
   }
 
 }
-
-
 
 </script>
 

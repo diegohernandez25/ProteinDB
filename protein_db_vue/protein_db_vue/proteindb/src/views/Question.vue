@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-        
+
         <answerRes2
             :answer2=getCorrectAnswer
         />
@@ -165,7 +165,7 @@
     </div>
     <br>
     <div v-for="(answer,index) in currentQuestion.answers" v-bind:key="index" >
-            
+
             <answerRes2 v-if="index!==currentQuestion.answeredStatus"
             :answer2=answer
             />
@@ -238,17 +238,16 @@ export default {
       'questions'
     ]),
 
-    getCorrectAnswer(){
-        let aS=this.questions[this.id]['answeredStatus'];
-        if(aS>=0){
-            console.log("--");
-            console.log(this.questions[this.id]['answers'][aS])
-            return this.questions[this.id]['answers'][aS]
-        }
-        else {
-            console.log("--");
-            return null
-        }
+    getCorrectAnswer () {
+      let aS = this.questions[this.id]['answeredStatus']
+      if (aS >= 0) {
+        console.log('--')
+        console.log(this.questions[this.id]['answers'][aS])
+        return this.questions[this.id]['answers'][aS]
+      } else {
+        console.log('--')
+        return null
+      }
     }
 
   },

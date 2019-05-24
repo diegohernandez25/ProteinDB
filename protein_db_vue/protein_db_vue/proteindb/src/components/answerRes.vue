@@ -2,7 +2,6 @@
 <template>
     <div class="result-item-answer">
         <div>
-                        
 
             <h2><router-link class="other-answer-label" :to="`/question/${getID}`">{{answer.question}}</router-link></h2>
 
@@ -41,7 +40,7 @@ export default {
     answer: Object
   },
 
-   computed: {
+  computed: {
     ...mapState([
       'users'
     ]),
@@ -53,7 +52,7 @@ export default {
     getID () {
       let x = this.getIDbyQuestion(this.answer.question)
       return x
-    },
+    }
 
   }
 }

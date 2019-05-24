@@ -112,7 +112,6 @@
           </div>
           <div v-for="(param,index) in listOfParams" v-bind:key="index">
 
-
             <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
             <span style="font-size: 20px">{{param}}</span>
 
@@ -316,7 +315,6 @@
               </div>
             </div>
           </div>
-
 
           <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
@@ -646,38 +644,38 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Search',
-  data(){
-    return{
+  data () {
+    return {
 
     }
   },
 
-  methods:{
+  methods: {
 
   },
 
-  computed:{
+  computed: {
 
     ...mapState([
       'proteins'
     ]),
 
-    listOfParams(){
-      var list=[]
+    listOfParams () {
+      var list = []
       console.log(this.$route.query)
-      for(var param in this.$route.query){
-        if(this.$route.query[param]!="false" && param!="searchText"){
+      for (var param in this.$route.query) {
+        if (this.$route.query[param] != 'false' && param != 'searchText') {
           list.push(param)
         }
       }
-      console.log(list);
-     return  list
+      console.log(list)
+      return list
     },
 
-    filteredProteinList(){
-      console.log("in filtering...");
-      let myfilter = this.$route.query['searchText'].toLowerCase();
-      console.log(myfilter);
+    filteredProteinList () {
+      console.log('in filtering...')
+      let myfilter = this.$route.query['searchText'].toLowerCase()
+      console.log(myfilter)
       console.log(this.proteins)
       return this.proteins.filter(function (protein) {
         console.log(protein)
@@ -686,9 +684,7 @@ export default {
       })
     }
 
-
   }
-
 
 }
 </script>
