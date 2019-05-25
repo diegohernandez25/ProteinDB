@@ -58,6 +58,24 @@ h1, h2{
     border: 3px solid #00B4CC;
 }
 
+.profile-img-search {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+
+}
+
+.profile-img-search > img{
+    align-self: auto;
+    border-radius: 50%;
+    border: 3px solid #00B4CC;
+    height: 50%;
+    width: 50%;
+
+}
+
 .info-container{
     margin-left: 5%;
     flex:4;
@@ -71,9 +89,6 @@ h1, h2{
     display:flex;
     flex-direction: column;
 }
-
-
-
 
 
 

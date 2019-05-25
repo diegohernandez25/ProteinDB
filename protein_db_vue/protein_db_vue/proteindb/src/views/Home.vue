@@ -2,7 +2,7 @@
   <div class="home">
     <!--Question section-->
 
-    <div class="container" style="padding-top: 10px">
+    <div class="container" style="padding-top: 10px; padding-left: 3%">
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
@@ -15,7 +15,6 @@
                 </div>
 
             </div>
-
 
             <div class="row"  style="padding-left: 5%; padding-top: 3%">
                 <input v-model="questionForm.title"  type="text" class="question-text" placeholder="Ask a Question!">
@@ -98,8 +97,8 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
+          </div>
+        </div>
      </b-tabs>
     </div>
 
@@ -118,24 +117,23 @@ export default {
     Question
   },
 
-   data() {
-      return {
-        fields: ['title'],
-        index: 0,
-        tabIndex:0,
-        questionForm: {
-                title: '',
-                body: '',
-                author: 'Frederico',
-                answers: [],
-                date: '01-01-2019',
-                views:0,
-                answeredStatus:-1
-            },
-        showDismissibleAlert: false
-      }
-    },
-
+  data () {
+    return {
+      fields: ['title'],
+      index: 0,
+      tabIndex: 0,
+      questionForm: {
+        title: '',
+        body: '',
+        author: 'Frederico',
+        answers: [],
+        date: '01-01-2019',
+        views: 0,
+        answeredStatus: -1
+      },
+      showDismissibleAlert: false
+    }
+  },
 
   methods: {
     ...mapActions([
@@ -184,7 +182,7 @@ export default {
         views: 0,
         answeredStatus: -1
       }
-      this.$router.replace("/question/" + page_id);
+      this.$router.replace('/question/' + page_id)
     },
 
     resetIndex: function () {
