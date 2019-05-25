@@ -75,6 +75,7 @@
             </div>
           </div>
         </b-tab>
+
         <div class="container" style="padding-top: 2px; margin-bottom: 3%">
                 <div class="row">
                     <div class="col-sm-9">
@@ -96,8 +97,7 @@
                       </div>
                     </div>
                 </div>
-            </div>
-          </div>
+
         </div>
      </b-tabs>
     </div>
