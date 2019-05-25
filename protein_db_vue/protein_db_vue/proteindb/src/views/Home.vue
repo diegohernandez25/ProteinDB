@@ -67,7 +67,7 @@
             </div>
           </div>
         </b-tab>
-        <b-tab @click="tabIndex=1; resetIndex()" title="My Questions">
+        <b-tab @click="tabIndex=2; resetIndex()" title="My Questions">
           <div id='My_Questions' class="tab-content">
             <div v-for="(question, index) in getMyQuestions('Frederico')" v-bind:key="index" class=question >
               <Question
@@ -81,13 +81,19 @@
                     <div class="col-sm-9">
                     </div>
                     <div class="col-sm-1">
-                      <div v-on:click="next()">
-                        <button style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                      <div @click="prev()">
+                      
+                        <button v-if="index>0" style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                        <button v-else disabled style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+
                       </div>
                     </div>
                     <div class="col-sm-1">
-                      <div v-on:click="prev()">
-                        <button style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                      <div @click="next()">
+                        <button v-if="tabIndex==0 && index+3<orderedQuestionsByViews.length" style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                        <button v-else-if="tabIndex==1 && index+3<nonAnswerdQuestions.length" style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                        <button v-else-if="tabIndex==2 && index+3<getMyQuestions('Frederico').lenght" style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                        <button v-else disabled style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                       </div>
                     </div>
                 </div>

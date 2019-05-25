@@ -189,9 +189,105 @@
                 </div>
               </div>
             </div>
+             <div v-for="(pub,index) in getfilteredPublicationList($route.query['searchText'].toLowerCase())" v-bind:key="index">
+              <div class="container home-question-ans">
+                    <div class="row question-tabs">
+                        <div class="col-sm-12">
+                            {{pub.name}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>As armas e os barões assinalados,
+                                Que da ocidental praia Lusitana,
+                                Por mares nunca de antes navegados,
+                                Passaram ainda além da Taprobana,
+                                Em perigos e guerras esforçados,
+                                Mais do que prometia a força humana,
+                                E entre gente remota edificaram
+                                Novo Reino, que tanto sublimaram;
+                                As armas e os barões assinalados,
+                                Que da ocidental praia Lusitana,
+                                Por mares nunca de antes navegados,
+                                Passaram ainda além da Taprobana,
+                                Em perigos e guerras esforçados,
+                                Mais do que prometia a força humana,
+                                E entre gente remota edificaram
+                                Novo Reino, que tanto sublimaram;
+                            </p>
+                        </div>
+                        <br>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span style="font-size: 20px">Proteins associated with publication:</span>
+                            <br><br>
+                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span style="font-size: 20px">Authors:</span>
+                            <br>
+                            <span class="avatar-workplace">Frederico Gratinad, Frederico Gratinad, Frederico Gratinad, Frederico Gratinad
+                            </span>
+                        </div>
+                        <div class="col-sm-5">
+                            <span style="font-size: 20px">Universities and Institutes associated to research:</span>
+                            <br>
+                            <span class="avatar-workplace">Universidade de Aveiro
+                            </span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span style="font-size: 20px">Publication Date:</span>
+                            <br>
+                            <span class="avatar-workplace">25-03-1996
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span style="font-size: 20px">Publication Submited by:</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span style="font-size: 20px">Submited in:</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 hide-item">
+                            <img src="/imgs/avatar.png" alt="Avatar" class="avatar">
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="avatar-name-ans" href="#">Frederico Gratinad</a>
+                            <br>
+                            <span class="avatar-workplace">University of Aveiro - Biology Master Degree</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="ans-date">25-03-1996</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <button style=" font-size: 130%"
+                                    type="button"
+                                    id="testBtn"
+                                    class="btn btn-success glyphicon glyphicon-thumbs-up"
+                                    data-loading-text=" ... ">👎4</button>
+                            <button style="font-size: 130%; margin-left: 10%"
+                                    type="button" id="testBtnDown" class="btn btn-success glyphicon glyphicon-thumbs-down" data-loading-text=" ... ">👍4</button>
+
+                        </div>
+                    </div>
+                    <br>
+                </div>
+           
             <br>
-
+            </div>
             <br>
             <br>
             <div class="container" style="padding-top: 1%; padding-bottom: 2%">
@@ -634,7 +730,8 @@ export default {
       'getfilteredProjectList',
       'getfilteredProteinList',
       'getfilteredQuestionList',
-      'getProjecIDtByName'
+      'getProjecIDtByName',
+      'getfilteredPublicationList'
     ]),
 
 

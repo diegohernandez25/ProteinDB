@@ -94,9 +94,7 @@ export default {
     ...mapActions([
       'addProject'
     ]),
-    ...mapGetters([
-      'getProjecIDtByName'
-    ]),
+    
     onSubmit () {
       if (this.form.name == '' || this.form.privacy == '') {
         alert('Name and Privacy have to have a value')
@@ -117,14 +115,16 @@ export default {
         console.log('Project name:', payload.name)
         this.addProject(payload)
 
-        //TODO: const projId = this.getProjecIDtByName(payload.name)
+        let nameP=payload.name;
+        let projId =  this.getID
+        console.log(projId)
         this.currentMember = ''
         this.role = ''
         this.form.name = ''
         this.form.members = ['Frederico']
         this.form.proteins = ''
         this.form.priv = ''
-        //TODO: this.$router.replace('/project/' + projId)
+        this.$router.replace('/project/' + projId)
       }
     },
 
@@ -140,6 +140,19 @@ export default {
     }
   },
 
+  computed:{
+     ...mapGetters([
+      'getProjecIDtByName'
+    ]),
+
+    getID: {
+    // getter
+    get: function () {
+      console.log(this.getProjecIDtByName(this.form.name));
+      return this.getProjecIDtByName(this.form.name);
+    },
+  }
+}
 }
 </script>
 

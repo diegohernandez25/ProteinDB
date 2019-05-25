@@ -97,11 +97,11 @@ export default {
     })
   },
 
-  getfilteredQuestionList: (state) => (filter) => {
+  getfilteredPublicationList: (state) => (filter) => {
     console.log('in filtering...')
     let myfilter = filter;
     return state['publications'].filter(function (publication) { 
-      let pubName = publication.title.toLowerCase()
+      let pubName = publication.name.toLowerCase()
       return pubName.includes(myfilter)
     })
   },
