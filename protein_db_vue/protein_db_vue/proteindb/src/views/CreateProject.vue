@@ -1,9 +1,15 @@
 <template>
   <div class="container">
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+            Name and Privacy have to have a value
+            </b-alert>
+      <b-alert v-model="showDismissibleAlert2" variant="danger" dismissible>
+            New member has to have a name and a role 
+            </b-alert>
     <b-form v-if="show">
       <b-form-group
         id="input-group-1"
-        label="Name of the project:"
+        label="*Name of the project:"
         label-for="input-1"
         description="Name of the project must be unique among your projects"
       >
@@ -47,16 +53,23 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-3" label="Privacy:" label-for="input-3">
+      <b-form-group id="input-group-3" label="*Privacy:" label-for="input-3">
         <b-form-select
           id="input-3"
           v-model="form.priv"
           :options="privL"
 
         ></b-form-select>
+        
       </b-form-group>
+      
       <b-button @click="onSubmit" class="add-button">Submit</b-button>
     </b-form>
+
+    <br>
+        *Mandatory Fields
+
+    
 
     <br>
     <br>
@@ -74,6 +87,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {
+      showDismissibleAlert: false,
+      showDismissibleAlert2: false,
       currentMember: '',
       role: '',
       form: {
@@ -97,7 +112,7 @@ export default {
     
     onSubmit () {
       if (this.form.name == '' || this.form.privacy == '') {
-        alert('Name and Privacy have to have a value')
+        this.showDismissibleAlert=true
       } else {
         let payload = {
           name: this.form.name,
@@ -130,7 +145,7 @@ export default {
 
     addMember () {
       if (this.currentMember == '' || this.role == '') {
-        alert("Member and Role can't be empty")
+        this.showDismissibleAlert2=true
       } else {
         // this.form.members.push({name: this.currentMember, role:this.role})
         this.form.members.push(this.currentMember)
