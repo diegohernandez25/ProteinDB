@@ -6,7 +6,7 @@
         <div class="ask">
             <div class="row">
                 <div class="col-sm-1 hide-item">
-                    <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
+                    <img src="../assets/images/profile.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div class="col-sm-11">
                     <router-link class="avatar-name" :to="`/profile/0`">Frederico</router-link>

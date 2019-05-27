@@ -30,7 +30,7 @@
     </div>
     <div class="row">
       <div class="col-sm-1 hide-item">
-        <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
+        <img src="../assets/images/profile.jpg" alt="Avatar" class="avatar">
       </div>
       <div class="col-sm-5">
 

@@ -223,11 +223,9 @@
                         <div class="col-sm-12">
                             <span style="font-size: 20px">Proteins associated with publication:</span>
                             <br><br>
-                            <a href="#"><span class="protein-tag"> Protein</span></a>
-                            <a href="#"><span class="protein-tag"> Protein</span></a>
-                            <a href="#"><span class="protein-tag"> Protein</span></a>
-                            <a href="#"><span class="protein-tag"> Protein</span></a>
-                            <a href="#"><span class="protein-tag"> Protein</span></a>
+                            <div v-for="(protein, index) in pub.proteins" v-bind:key=index>
+                            <router-link :to="`/protein/${getProteinIDtByName(protein)}`"><span class="protein-tag"> {{protein}}</span></router-link>
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -235,7 +233,7 @@
                         <div class="col-sm-5">
                             <span style="font-size: 20px">Authors:</span>
                             <br>
-                            <span class="avatar-workplace">Frederico Gratinad, Frederico Gratinad, Frederico Gratinad, Frederico Gratinad
+                            <span v-for="(author, index) in pub.authors" v-bind:key=index class="avatar-workplace">{{author}},
                             </span>
                         </div>
                         <div class="col-sm-5">
@@ -262,7 +260,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-1 hide-item">
-                            <img src="/imgs/avatar.png" alt="Avatar" class="avatar">
+                            <img src="../assets/images/profile.jpg" alt="Avatar" class="avatar">
                         </div>
                         <div class="col-sm-4">
                             <a class="avatar-name-ans" href="#">Frederico Gratinad</a>
@@ -803,7 +801,7 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-1 hide-item">
-                    <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
+                    <img src="../assets/images/profile.jpg" alt="Avatar" class="avatar">
                   </div>
                   <div class="col-sm-5">
                     <router-link :to="`/profile/${getIDbyUserName(question.author)}`" class="avatar-name-ans">{{question.author}}</router-link>

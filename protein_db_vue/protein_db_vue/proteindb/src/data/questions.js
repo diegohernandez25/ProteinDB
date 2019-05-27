@@ -2,7 +2,7 @@ export default [
   {
 
     title: 'Albumin is a large protein which circulates freely in human plasma. Another type of protein, called aquaporins, act as a channel for water to enter and exit a cell, and are located within the lipid bilayer of a cell’s plasma membrane. Based on their physiological locations, how would the tertiary structure of these two proteins mostly likely compare?',
-    body: '',
+    body: 'Albumin is a large protein which circulates freely in human plasma. Another type of protein, called aquaporins, act as a channel for water to enter and exit a cell, and are located within the lipid bilayer of a cell’s plasma membrane. Based on their physiological locations, how would the tertiary structure of these two proteins mostly likely compare?',
     author: 'Frederico',
     answers: [
 
@@ -15,7 +15,7 @@ export default [
   {
 
     title: 'A new drug is developed which selectively cleaves covalent bonds between two sulfur atoms of non-adjacent amino acids in a polypeptide chain. Which level of protein structure in affected molecules would be most directly affected by the drug?',
-    body: '',
+    body: 'A new drug is developed which selectively cleaves covalent bonds between two sulfur atoms of non-adjacent amino acids in a polypeptide chain. Which level of protein structure in affected molecules would be most directly affected by the drug?',
     author: 'Frederico',
     answers: [
       {
@@ -43,7 +43,7 @@ export default [
   {
 
     title: 'What relative change in protein concentrations would most be the most direct result of a disease which halts the function of the rough endoplasmic reticulum?',
-    body: '',
+    body: 'What relative change in protein concentrations would most be the most direct result of a disease which halts the function of the rough endoplasmic reticulum?',
     author: 'Rodrigo',
     answers: [
       {
@@ -69,7 +69,7 @@ export default [
   {
 
     title: 'The major protein component of human hair is α-keratin. Hair ‘straighteners’ are commonly used tools which use heat to iron hair into temporarily lying flat and straight. What is the best biological explanation for this phenomenon?',
-    body: '',
+    body: 'The major protein component of human hair is α-keratin. Hair ‘straighteners’ are commonly used tools which use heat to iron hair into temporarily lying flat and straight. What is the best biological explanation for this phenomenon?',
     author: 'Rodrigo',
     answers: [
      
