@@ -10,11 +10,11 @@
 
 
 .round {
-    position: absolute;
+    /*position: absolute;*/
     border: 2px solid #00B4CC;
     background-color: #00B4CC;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
 
 }
