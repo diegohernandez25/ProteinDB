@@ -16,9 +16,10 @@
 
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <span style="font-size: 16px">Answer Submited by:</span>
             </div>
+          <div class="col-sm-1 hide-item"></div>
             <div class="col-sm-2">
                 <span style="font-size: 16px">Submited in:</span>
             </div>
@@ -27,7 +28,7 @@
             <div class="col-sm-1 hide-item">
                 <img src="../assets/images/profile.jpg" alt="Avatar" class="avatar">
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
 
                 <router-link :to="`/profile/${userInfo.id}`" class="avatar-name-ans">{{question.author}} </router-link>
                 <br>

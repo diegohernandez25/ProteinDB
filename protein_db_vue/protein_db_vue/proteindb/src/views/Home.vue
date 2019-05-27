@@ -82,7 +82,7 @@
                     </div>
                     <div class="col-sm-1">
                       <div @click="prev()">
-                      
+
                         <button v-if="index>0" style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                         <button v-else disabled style="background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
 
@@ -94,10 +94,12 @@
                         <button v-else-if="tabIndex==1 && index+3<nonAnswerdQuestions.length" style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                         <button v-else-if="tabIndex==2 && index+3<getMyQuestions('Frederico').lenght" style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                         <button v-else disabled style="background-color: #00B4CC; color: white" type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                        <br>
                       </div>
+                      <br>
                     </div>
+                  <br>
                 </div>
-
         </div>
      </b-tabs>
     </div>
@@ -173,7 +175,7 @@ export default {
       } else {
         this.showDismissibleAlert=true;
       }
-     
+
       this.questionForm = {
         title: '',
         body: '',
@@ -183,7 +185,7 @@ export default {
         views: 0,
         answeredStatus: -1
       }
-      
+
     },
 
     resetIndex: function () {
