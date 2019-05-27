@@ -49,6 +49,21 @@ export default {
     return index
   },
 
+  getProteinIDtByName: (state) => (prName) => {
+    console.log('DEBUG!')
+    var index = -1
+    console.log('prName: ', prName)
+    let k = state['proteins'].find(function (item, i) {
+      console.log('item name: ', item.name)
+      if (item.name == prName) {
+        index = i
+        return i
+      }
+    })
+    console.log('index: ', index)
+    return index
+  },
+
   getProjectByID: (state) => (pID) => {
     return state['projects'][pID]
   },
@@ -92,7 +107,7 @@ export default {
     console.log('in filtering...')
     let myfilter = filter;
     return state['questions'].filter(function (question) { 
-      let questTitle = quest.title.toLowerCase()
+      let questTitle = question.title.toLowerCase()
       return questTitle.includes(myfilter)
     })
   },

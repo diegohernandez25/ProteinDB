@@ -306,8 +306,10 @@
               </div>
             </div>
           </div>
-
+          
+         <!--
            <div v-if="$route.query.author=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
+           
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
@@ -315,6 +317,8 @@
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
+
+
             <br>
             <div class="container filter-container" >
 
@@ -400,7 +404,7 @@
                </div>
              </div>
           </div>
-
+        -->
           <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -494,9 +498,13 @@
                 <div class="col-sm-12">
                   <span style="font-size: 20px">Proteins associated with project:</span>
                   <br><br>
-                  <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico </button>
-                  <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
-                  <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">Frederico</button>
+                 
+                  <div v-for="(protein,index) in proj.proteins" v-bind:key="index">
+                     <router-link :to="`/protein/${getProteinIDtByName(protein)}`"> <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">{{protein}}</button> </router-link>
+                  </div>
+                  
+                
+                 
                 </div>
               </div>
               <br>
@@ -504,7 +512,7 @@
                 <div class="col-sm-6">
                   <span style="font-size: 20px">Members:</span>
                   <br>
-                  <span class="avatar-workplace">Frederico Gratinad, Frederico Gratinad, Frederico Gratinad, Frederico Gratinad
+                  <span class="avatar-workplace" v-for="(member,index) in proj.members" v-bind:key="index">{{member}}, 
                               </span>
                 </div>
                 <div class="col-sm-3">
@@ -679,7 +687,8 @@
               </div>
             </div>
           </div>
-
+          
+          <div v-if="$route.query.author=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -710,7 +719,7 @@
             </div>
             <br>
 
-            <div v-for="(protein,index) in filteredProteinList" v-bind:key="index">
+            <div v-for="(user,index) in getfilteredUserList($route.query['searchText'].toLowerCase())" v-bind:key="index">
               <div class="container home-question-ans">
                 <div class="row">
                   <div class="col-sm-3">
@@ -721,13 +730,13 @@
                   <div class="col-sm-9">
                     <div class="container">
                       <div class="row">
-                        <h2 class="filter-label">Frederico</h2>
+                       <router-link :to="`/profile/${getIDbyUserName(user.name)}`" style="color:grey"> <h2 class="filter-label">{{user.name}}</h2></router-link>
                       </div>
                       <div class="row">
                         <h5 class="filter-label" style="font-size: 20px">University of Aveiro</h5>
                       </div>
                       <div class="row">
-                        <a href="#">more...</a>
+                        <router-link :to="`/profile/${getIDbyUserName(user.name)}`" > more...</router-link>
                       </div>
                       <div class="row">
                         <div class="col-sm-4">Number of Projects:</div>
@@ -735,8 +744,8 @@
                         <div class="col-sm-4">Number of Answers:</div>
                       </div>
                       <div class="row">
-                        <div class="col-sm-4" style="color:gray"> 3 </div>
-                        <div class="col-sm-4" style="color:gray"> 0 </div>
+                        <div class="col-sm-4" style="color:gray"> {{user.projects.length}} </div>
+                        <div class="col-sm-4" style="color:gray"> {{getUserQuestions(user.name).length}} </div>
                         <div class="col-sm-4" style="color:gray"> 52 </div>
                       </div>
                     </div>
@@ -761,7 +770,10 @@
               </div>
             </div>
           </div>
+          </div>
 
+
+           <div v-if="$route.query.question=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -771,15 +783,14 @@
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
             <br>
-            <div>
-              <div class="container home-question-ans ">
+            <div v-for="(question,index) in getfilteredQuestionList($route.query['searchText'].toLowerCase())" v-bind:key="index">
+               <div class="container home-question-ans ">
                 <div class="row question-tabs" style="padding-left: 10px">
-                  Question?
+                 <router-link :to="`/question/${getIDbyQuestion(question.title)}`" style="color:grey" > {{question.title}} </router-link>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-12 text">
-                      dwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedwdwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedwdwdweewdweeeeedwdweewdweeeeedwdweewdweeeeedw
+                        {{question.body}}
                     </div>
                 </div>
                 <div class="row">
@@ -795,18 +806,19 @@
                     <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
                   </div>
                   <div class="col-sm-5">
-                    <p class="avatar-name-ans">Frederico Gratinad</p>
+                    <router-link :to="`/profile/${getIDbyUserName(question.author)}`" class="avatar-name-ans">{{question.author}}</router-link>
                     <span class="avatar-workplace">University of Aveiro - Biologia</span>
                   </div>
                   <div class="col-sm-3">
-                    <span class="ans-date" style="font-size: 15px">25-031996</span>
+                    <span class="ans-date" style="font-size: 15px">{{question.date}}</span>
                   </div>
                   <div class="col-sm-2">
-                    <a href="#"> 3 more answers</a>
+                    <p> {{question.answers.length}} more answers</p>
                   </div>
                 </div>
                 <br>
               </div>
+              <br>
             </div>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
@@ -824,6 +836,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <br>
@@ -857,8 +870,13 @@ export default {
       'getfilteredProjectList',
       'getfilteredProteinList',
       'getfilteredQuestionList',
+      'getfilteredUserList',
       'getProjecIDtByName',
-      'getfilteredPublicationList'
+      'getfilteredPublicationList',
+      'getIDbyUserName',
+      'getIDbyQuestion',
+      'getUserQuestions',
+      'getProteinIDtByName'
     ]),
 
     listOfParams () {
