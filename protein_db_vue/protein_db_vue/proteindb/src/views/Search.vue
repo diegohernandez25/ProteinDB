@@ -285,7 +285,7 @@
                     </div>
                     <br>
                 </div>
-           
+
             <br>
             </div>
             <br>
@@ -684,7 +684,7 @@
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
-                        in <span style="color: gray">Users!</span></span>
+                        in <span style="color: gray">Users</span></span>
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
@@ -766,7 +766,7 @@
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
-                        in <span style="color: gray">Users!</span></span>
+                        in <span style="color: gray">Questions</span></span>
               <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
