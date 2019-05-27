@@ -168,11 +168,12 @@ export default {
     submitNewQuestion () {
       if (this.questionForm.title != '') {
         this.addQuestion(this.questionForm)
-        alert('Your question was submited')
+        const page_id = this.getIDbyQuestion(this.questionForm.title)
+        this.$router.replace('/question/' + page_id)
       } else {
-        alert("You can't submit an empty question")
+        this.showDismissibleAlert=true;
       }
-      const page_id = this.getIDbyQuestion(this.questionForm.title)
+     
       this.questionForm = {
         title: '',
         body: '',
@@ -182,7 +183,7 @@ export default {
         views: 0,
         answeredStatus: -1
       }
-      this.$router.replace('/question/' + page_id)
+      
     },
 
     resetIndex: function () {
