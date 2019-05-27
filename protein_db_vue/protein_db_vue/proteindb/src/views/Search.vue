@@ -293,13 +293,13 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
-                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button disabled v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
                   <span style="text-align: center; " class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1"  style="width: 10%; ">
-                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button disabled v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -437,13 +437,13 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
-                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button disabled v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
                   <span style="text-align: center;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button disabled v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -573,13 +573,13 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
-                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button disabled v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
                   <span style="text-align: center;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button disabled  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -656,13 +656,13 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
-                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button disabled v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
                   <span style="text-align: center; " class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button disabled v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
@@ -722,13 +722,13 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
-                  <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
+                  <button disabled v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                   </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
                   <span style="text-align: center; ;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
-                  <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
+                  <button disabled v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
