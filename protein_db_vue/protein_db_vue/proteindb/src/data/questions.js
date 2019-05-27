@@ -5,11 +5,31 @@ export default [
     body: 'Albumin is a large protein which circulates freely in human plasma. Another type of protein, called aquaporins, act as a channel for water to enter and exit a cell, and are located within the lipid bilayer of a cell’s plasma membrane. Based on their physiological locations, how would the tertiary structure of these two proteins mostly likely compare?',
     author: 'Frederico',
     answers: [
-
+      {
+        text: 'Tertiary structure',
+        author: 'Rodrigo',
+        date: '01-01-2019',
+        upvotes: 9,
+        downvotes: 4
+      },
+      {
+        text: 'Secondary structure',
+        author: 'Rodrigo',
+        date: '01-01-2019',
+        upvotes: 9,
+        downvotes: 4
+      },
+      {
+        text: 'Primary structure',
+        author: 'Frederico',
+        date: '01-01-2019',
+        upvotes: 9,
+        downvotes: 4
+      },
     ],
     date: '01-01-2019',
     views: 6,
-    answeredStatus: -1
+    answeredStatus: 0
   },
 
   {
