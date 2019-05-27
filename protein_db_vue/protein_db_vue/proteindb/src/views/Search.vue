@@ -107,10 +107,10 @@
         <!--Result section-->
         <div class="col-sm-10 increment-col">
           <div>
-            <a class="filter-label" style="color: #4C4C4C;padding-top: 2%;
+            <a class="filter-label hide-item" style="color: #4C4C4C;padding-top: 2%;
                 font-family: 'Baloo Bhai', cursive;">Chosen Filters</a>
           </div>
-          <div v-for="(param,index) in listOfParams" v-bind:key="index">
+          <div class="hide-item" v-for="(param,index) in listOfParams" v-bind:key="index">
 
             <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false">❌</button>
             <span style="font-size: 20px">{{param}}</span>
@@ -126,7 +126,7 @@
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
             <br>
-            <div class="container filter-container" >
+            <div class="container filter-container hide-item" >
 
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Search By:</span>
@@ -136,13 +136,13 @@
                   <label>Publication Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Publication Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -151,13 +151,13 @@
                   <label>Submition Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Submition Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -166,13 +166,13 @@
                   <label>Authors:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Gratinad">
+                  <input style="margin-left: 5px; width: 70%;" type="text" placeholder="ex: Frederico, Gratinad">
                 </div>
                 <div class="col-sm-3">
                   <label>Institute/University:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
+                  <input style="margin-left: 5px; width: 70%;" type="text" placeholder="ex: University of Aveiro, FEUP">
                 </div>
               </div>
               <div class="row">
@@ -180,7 +180,7 @@
                   <label>Proteins:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Fred">
+                  <input style="margin-left: 5px; width: 70%;" type="text" placeholder="ex: Frederico, Fred">
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-1">
@@ -262,7 +262,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-1 hide-item">
-                            <img src="/imgs/avatar.png" alt="Avatar" class="avatar">
+                            <img src="../assets/images/avatar.png" alt="Avatar" class="avatar">
                         </div>
                         <div class="col-sm-4">
                             <a class="avatar-name-ans" href="#">Frederico Gratinad</a>
@@ -292,119 +292,21 @@
             <br>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                  <span style="text-align: center; " class="label-text hide-item"><h2>1</h2></span>
                 </div>
-                <div class="col-sm-1" >
+                <div class="col-sm-1"  style="width: 10%; ">
                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
               </div>
             </div>
           </div>
-          
-         <!--
-           <div v-if="$route.query.author=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
-           
-            <div style="margin-top: 15px">
-                    <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Results for: <span style="color: gray">"{{$route.query.searchText}}"</span>
-                        in <span style="color: gray">Authors</span></span>
-              <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
-                      style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
-            </div>
 
-
-            <br>
-            <div class="container filter-container" >
-
-                    <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
-                    font-family: 'Baloo Bhai', cursive;">Search By:</span>
-
-              <div class="row">
-                <div class="col-sm-3">
-                  <label>Publication Initial Date:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
-                </div>
-                <div class="col-sm-3">
-                  <label>Publication Final Date:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-3">
-                  <label>Submition Initial Date:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
-                </div>
-                <div class="col-sm-3">
-                  <label>Submition Final Date:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-3">
-                  <label>Authors:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Gratinad">
-                </div>
-                <div class="col-sm-3">
-                  <label>Institute/University:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-3">
-                  <label>Proteins:</label>
-                </div>
-                <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Fred">
-                </div>
-                <div class="col-sm-3"></div>
-                <div class="col-sm-1">
-                  <button type="button" class="btn filter-buttons" aria-haspopup="true" aria-expanded="false"
-                          style="font-size: 20px;">Filter️️</button>
-                </div>
-              </div>
-            </div>
-
-            <br>
-
-            <br>
-            <br>
-             <div class="container" style="padding-top: 1%; ">
-               <div class="row">
-                 <div class="col-sm-9">
-                 </div>
-                 <div class="col-sm-1" >
-                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
-                 </div>
-                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                   <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
-                 </div>
-                 <div class="col-sm-1" >
-                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
-                 </div>
-               </div>
-             </div>
-          </div>
-        -->
           <div v-if="$route.query.project=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
@@ -414,7 +316,7 @@
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
             <br>
-            <div class="container filter-container" >
+            <div class="container filter-container hide-item" >
 
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Search By:</span>
@@ -424,13 +326,13 @@
                   <label>Publication Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Publication Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -439,13 +341,13 @@
                   <label>Submition Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Submition Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -454,13 +356,13 @@
                   <label>Authors:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Gratinad">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: Frederico, Gratinad">
                 </div>
                 <div class="col-sm-3">
                   <label>Institute/University:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: University of Aveiro, FEUP">
                 </div>
               </div>
               <div class="row">
@@ -468,7 +370,7 @@
                   <label>Proteins:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Fred">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: Frederico, Fred">
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-1">
@@ -498,13 +400,10 @@
                 <div class="col-sm-12">
                   <span style="font-size: 20px">Proteins associated with project:</span>
                   <br><br>
-                 
+
                   <div v-for="(protein,index) in proj.proteins" v-bind:key="index">
                      <router-link :to="`/protein/${getProteinIDtByName(protein)}`"> <button type="button" class="btn protein-buttons" aria-haspopup="true" aria-expanded="false">{{protein}}</button> </router-link>
                   </div>
-                  
-                
-                 
                 </div>
               </div>
               <br>
@@ -512,7 +411,7 @@
                 <div class="col-sm-6">
                   <span style="font-size: 20px">Members:</span>
                   <br>
-                  <span class="avatar-workplace" v-for="(member,index) in proj.members" v-bind:key="index">{{member}}, 
+                  <span class="avatar-workplace" v-for="(member,index) in proj.members" v-bind:key="index">{{member}},
                               </span>
                 </div>
                 <div class="col-sm-3">
@@ -537,13 +436,13 @@
             <br>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                  <span style="text-align: center;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
@@ -561,7 +460,7 @@
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
             <br>
-            <div class="container filter-container" >
+            <div class="container filter-container hide-item" >
 
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Search By:</span>
@@ -571,13 +470,13 @@
                   <label>Publication Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Publication Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -586,13 +485,13 @@
                   <label>Submition Initial Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
                 <div class="col-sm-3">
                   <label>Submition Final Date:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="dd-mm-yyyy">
+                  <input type="datetime-local" style="margin-left: 5px; width:70%" name="date">
                 </div>
               </div>
 
@@ -601,13 +500,13 @@
                   <label>Authors:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Gratinad">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: Frederico, Gratinad">
                 </div>
                 <div class="col-sm-3">
                   <label>Institute/University:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: University of Aveiro, FEUP">
                 </div>
               </div>
               <div class="row">
@@ -615,7 +514,7 @@
                   <label>Proteins:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: Frederico, Fred">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: Frederico, Fred">
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-1">
@@ -673,13 +572,13 @@
             </div>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                  <span style="text-align: center;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
@@ -687,7 +586,7 @@
               </div>
             </div>
           </div>
-          
+
           <div v-if="$route.query.author=='true'" class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
           <div class="search-container" style="background-color: #eee; padding: 15px; margin-top: 10px">
             <div style="margin-top: 15px">
@@ -698,7 +597,7 @@
                       style="font-size: 20px;margin-left: 10px">Hide ⬆️️</button>
             </div>
             <br>
-            <div class="container filter-container" >
+            <div class="container filter-container hide-item" >
 
                     <span class="filter-label" style="color: #4C4C4C;padding-top: 2%;
                     font-family: 'Baloo Bhai', cursive;">Search By:</span>
@@ -708,7 +607,7 @@
                   <label>Institute/University:</label>
                 </div>
                 <div class="col-sm-3">
-                  <input style="margin-left: 5px" type="text" placeholder="ex: University of Aveiro, FEUP">
+                  <input style="margin-left: 5px; width:70%" type="text" placeholder="ex: University of Aveiro, FEUP">
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-1">
@@ -727,7 +626,7 @@
                       <img src="../assets/images/profile.jpg" alt="">
                     </div>
                   </div>
-                  <div class="col-sm-9">
+                  <div class="col-sm-8">
                     <div class="container">
                       <div class="row">
                        <router-link :to="`/profile/${getIDbyUserName(user.name)}`" style="color:grey"> <h2 class="filter-label">{{user.name}}</h2></router-link>
@@ -756,13 +655,13 @@
             </div>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                  <span style="text-align: center; " class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
@@ -822,13 +721,13 @@
             </div>
             <div class="container" style="padding-top: 1%; ">
               <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1" >
                   <button v-on:click="next()" style="padding-right:30px; background-color: #00B4CC; color: white" type="button" class="btn round  side-edit-btn"><i class="fas fa-arrow-left"></i></button>
                   </div>
                 <div class="col-sm-1 label-text" style="text-align: center; " >
-                  <span style="text-align: center; margin: 50%;" class="label-text"><h2>1</h2></span>
+                  <span style="text-align: center; ;" class="label-text hide-item"><h2>1</h2></span>
                 </div>
                 <div class="col-sm-1" >
                   <button  v-on:click="prev()" style="background-color: #00B4CC; color: white; " type="button" class="btn round side-edit-btn"><i class="fas fa-arrow-right"></i></button>
