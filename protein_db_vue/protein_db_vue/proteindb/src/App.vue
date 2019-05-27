@@ -11,8 +11,8 @@
 
         <div class="collapse navbar-collapse" style="padding-top: 2%" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
-            <div class="wrap">
-              <div class="search">
+            <div class="wrap ">
+              <div class="search hide-item">
                 <input  @keyup.enter="search" v-model="sText" type="text" class="searchTerm" placeholder="What are you looking for?">
                 <button @click="search" type="submit" class="searchButton">
                   <i class="fa fa-search"></i>
@@ -31,7 +31,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdown07">
                 <a class="dropdown-item" href="#">Yet to come</a>
-               
+
               </div>
             </li>
             <li class="nav-item">
@@ -56,7 +56,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light non-cellphone hide-item" style="margin-right: 85px;">
       <div class="wrap">
         <ul class="navbar-nav mr-auto">
-         
+
           <li class="nav-item">
             <div class="form-check">
               <label>
@@ -68,7 +68,7 @@
                     unchecked-value=false
                     >
                     Proteins
-                    </b-form-checkbox>  
+                    </b-form-checkbox>
               </label>
             </div>
           </li>
@@ -81,10 +81,10 @@
                     name="checkbox-3"
                     value=true
                     unchecked-value=false
-                    
+
                     >
                     Publications
-                    </b-form-checkbox>  
+                    </b-form-checkbox>
               </label>
             </div>
           </li>
@@ -99,7 +99,7 @@
                     unchecked-value=false
                     >
                     Author
-                    </b-form-checkbox>  
+                    </b-form-checkbox>
               </label>
             </div>
           </li>
@@ -114,7 +114,7 @@
                     unchecked-value=false
                     >
                     Question
-                    </b-form-checkbox>  
+                    </b-form-checkbox>
               </label>
             </div>
           </li>
@@ -129,13 +129,13 @@
                     unchecked-value=false
                     >
                     Project
-                    </b-form-checkbox>  
+                    </b-form-checkbox>
               </label>
             </div>
           </li>
         </ul>
       </div>
-     
+
     </nav>
     <br><br>
     <router-view/>
@@ -158,7 +158,7 @@ export default {
               project: "false"
           },
           sText:''
-          
+
       }
   },
 
@@ -190,7 +190,7 @@ export default {
 
   components: {
   },
-  
+
    computed:{
     ...mapGetters([
       'getLoggedInUser',
