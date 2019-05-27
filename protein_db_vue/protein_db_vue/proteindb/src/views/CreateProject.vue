@@ -4,7 +4,7 @@
             Name and Privacy have to have a value
             </b-alert>
       <b-alert v-model="showDismissibleAlert2" variant="danger" dismissible>
-            New member has to have a name and a role 
+            New member has to have a name and a role
             </b-alert>
     <b-form v-if="show">
       <b-form-group
@@ -60,16 +60,16 @@
           :options="privL"
 
         ></b-form-select>
-        
+
       </b-form-group>
-      
+
       <b-button @click="onSubmit" class="add-button">Submit</b-button>
     </b-form>
 
     <br>
         *Mandatory Fields
 
-    
+
 
     <br>
     <br>
@@ -109,7 +109,7 @@ export default {
     ...mapActions([
       'addProject'
     ]),
-    
+
     onSubmit () {
       if (this.form.name == '' || this.form.privacy == '') {
         this.showDismissibleAlert=true

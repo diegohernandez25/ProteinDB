@@ -98,7 +98,7 @@
                     value=true
                     unchecked-value=false
                     >
-                    Author
+                    User
                     </b-form-checkbox>
               </label>
             </div>

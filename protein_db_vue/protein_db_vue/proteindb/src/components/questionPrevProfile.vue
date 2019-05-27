@@ -2,7 +2,7 @@
   <div>
     <div class="row question-tabs">
       <div class="col-sm-11">
-        <router-link class="other-answer-label" :to="`/question/${getID}`">{{question.title}}</router-link>
+        <router-link style="color: gray" class="other-answer-label" :to="`/question/${getID}`">{{question.title}}</router-link>
       </div>
       <div class="col-sm-1">
         <button type="button" class="btn add-button"><i class="fas fa-pencil-alt"></i></button>
