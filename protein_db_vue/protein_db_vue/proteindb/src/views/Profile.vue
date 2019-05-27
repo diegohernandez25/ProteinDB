@@ -25,7 +25,7 @@
         </div>
 
         <div class=nav-button-row>
-            <button  style="background-color: #00B4CC; color: white" ref="Projects" @click="state='Projects'; clearRefs($event)" type="button" class="btn ">Project</button>
+            <button  style="background-color: #00B4CC; color: white" ref="Projects" @click="state='Projects'; clearRefs($event)" type="button" class="btn myactive">Project</button>
             <button style="background-color: #00B4CC; color: white" ref="Questions" @click="state='Questions'; clearRefs($event)" type="button" class="btn">Questions</button>
             <!--<button ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn btn-primary blue-button">Answers</button>-->
           <button style="background-color: #00B4CC; color: white" ref="Answers" @click="state='Answers'; clearRefs($event)" type="button" class="btn">Answers</button>

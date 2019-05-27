@@ -3,7 +3,7 @@
     <div class="result-item-answer">
         <div>
 
-            <h2><router-link class="other-answer-label" :to="`/question/${getID}`">{{answer.question}}</router-link></h2>
+            <h2 style="flex:20"><router-link class="other-answer-label" style="color:grey" :to="`/question/${getID}`">{{answer.question}}</router-link></h2>
 
             <div>
                 <button type="button" class="btn add-button"><i class="fas fa-pencil-alt"></i></button>
@@ -23,8 +23,16 @@
         <div class="result-item-answer-bottom-row">
             <a href="">more</a>
             <div>
-                <div>  <button type="button" class="btn add-button"><i class="fas fa-thumbs-up"></i></button> {{answer.upvotes}} </div>
-                <div>  <button type="button" class="btn add-button"><i class="fas fa-thumbs-down"></i></button> {{answer.downvotes}} </div>
+                <div>  <button style=" font-size: 130%"
+                        type="button"
+                        id="testBtn"
+                        class="btn btn-success glyphicon glyphicon-thumbs-up"
+                        data-loading-text=" ... ">👍 {{answer.upvotes}}</button> </div>
+                <div>  <button style=" font-size: 130%"
+                        type="button"
+                        id="testBtn"
+                        class="btn btn-danger glyphicon glyphicon-thumbs-up"
+                        data-loading-text=" ... ">👎 {{answer.downvotes}}</button> </div>
             </div>
         </div>
     </div>
