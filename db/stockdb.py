@@ -33,8 +33,8 @@ def poly_insert_query(sql_file, table, params, vals, init, qty):
 #					Must be according to order.
 # param> vals		list of values to insert. Must be according to ther columns order.
 ##
-def mono_insert_query(sql_file, table, params, vals):
-	poly_insert_query(sql_file, table, params, vals, 0, 1)
+def mono_insert_query(sql_file, table, params, vals, idx):
+	poly_insert_query(sql_file, table, params, vals, idx, idx)
 
 ##
 # Inserts 1 insert queries into a sql file without id concatenation.
@@ -56,6 +56,13 @@ def insert_query(sql_file, table, params, vals):
 	print(query)
 	sql_file.write(query)
 
+##
+# Low case string elements of a list
+# param> l	list of strings
+# return> list with all string with lower case character.
+##
+def low_case_elements(l):
+	return [e.lower() for e in l]
 
 #If execute as an isolated file...
 if __name__ == '__main__':
@@ -64,9 +71,10 @@ if __name__ == '__main__':
 	sql_file = open(path, 'w')
 	l	= ["TaxID" , "ScientificName", "Life", "Domain", "Kingdom", "Filo", "Class", 
 		"Order", "Family", "Genre", "Specie"]
-	mono_insert_query(sql_file, "SPECIES",l,l)
-	poly_insert_query(sql_file, "SPECIES",l,l,1,5)
-	insert_query(sql_file, "SPECIES",l,l)
+	v	= low_case_elements(l)
+	mono_insert_query(sql_file, "SPECIES",l,v,1)
+	poly_insert_query(sql_file, "SPECIES",l,v,1,5)
+	insert_query(sql_file, "SPECIES",l,v)
 	sql_file.close()
 		 
 
