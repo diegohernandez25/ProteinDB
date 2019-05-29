@@ -1,5 +1,6 @@
 import os
 from random import randint
+from datetime import datetime
 
 ##
 # Inserts 1 ore more insert queries into a sql file.
@@ -19,7 +20,6 @@ def poly_insert_query(sql_file, table, params, vals, init, qty):
 	query_list = list()
 	for i in list(range(init, init+qty, 1)):
 		_query = query
-		#_l = list(map(lambda x:"\""+ x + str(i) + "\"", vals))
 		_l = ["\""+ x + str(i) + "\"" if isinstance(x,str) else str(i) for x in vals]
 		query_list.append([ x + str(i) if isinstance(x,str) else i for x in vals])
 		for e in _l:
@@ -68,6 +68,10 @@ def low_case_elements(l):
 	return [e.lower() for e in l]
 
 
+
+
+
+
 ##
 # Write comment name table
 #
@@ -81,24 +85,49 @@ if __name__ == '__main__':
 	sql_file = open(path, 'w')
 	
 	#Species
-	l	= ["TaxID" , "ScientificName", "Life", "Domain", "Kingdom", "Filo", "Class", 
-		"Order", "Family", "Genre", "Specie"]
+	l	= ["TaxID" , "ScientificName", "Life", "Domain", "Kingdom", "Phylum", "Class", 
+		"Ordr", "Family", "Genre", "Specie"]
 	v_species	= low_case_elements(l)
 	v_species[0] = 0 
 	v_species 	= poly_insert_query(sql_file, "SPECIES",l,v_species,0,5)
 	
+	#PFunction
+	l = ["ID", "Description"]
+	v_pfunction = low_case_elements(l)
+	v_pfunction[0] = 0
+	v_pfunction = poly_insert_query(sql_file,"PFUNCTION",l,v_pfunction,0,5)
+	
+	#PUser
+	l = ["ID", "Name", "DateBirth", "ProfilePicture", "University", "Profession"]
+	v_puser = low_case_elements(l)
+	v_puser[0] = 0
+	v_puser = poly_insert_query(sql_file,"PUSER",l,v_puser,0,5)
+
+	#Curator
+	write_name(sql_file, "CURATOR")
+	l = ["User_ID", "DateOfContract"]
+	v = low_case_elements(l)
+	v_curator = list()
+	v[0] = 0
+	for i in range(5):
+		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
+		tmp[0] = v_puser[randint(0,4)][0]
+		tmp[1] = datetime.today().strftime('%d-%m-%Y')
+		insert_query(sql_file, "CURATOR", l, tmp)
+		v_curator.append(tmp)
+
 	#Gene
 	l	= ["Name", "Size", "Sequence", "GC_Content", "AT_Content"]
 	v_gene	= low_case_elements(l)
-	v_gene[0] = v_gene[1] = 0
+	v_gene[0] = v_gene[1] = v_gene[3] = v_gene[4] = 0
 	v_gene	= poly_insert_query(sql_file, "GENE",l,v_gene,0,5)
 
 	#ProteinEntry
 	write_name(sql_file,"PROTEIN_ENTRY")
-	l 	= ["AccessionID", "FullName", "Sequence", "ProteinType", "GeneName", "S_TaxID"]
+	l 	= ["AccessionID", "FullName", "Sequence", "ProteinType", "Gene_Name", "S_TaxID"]
 	v = low_case_elements(l)
 	v_prot_entry = list()
-	v[0] = v[5] = 0
+	v[5] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[4] = v_gene[randint(0,4)][0]
@@ -110,23 +139,10 @@ if __name__ == '__main__':
 	#Disease
 	l = ["ICD10Code", "Name", "Description"]
 	v_disease = low_case_elements(l)
-	v_disease[0] = 0
 	v_disease = poly_insert_query(sql_file,"DISEASE",l,v_disease,0,5)
 
-	#PFunction
-	l = ["ID", "Description"]
-	v_pfunction = low_case_elements(l)
-	v_pfunction[0] = 0
-	v_pfunction = poly_insert_query(sql_file,"PFUNCTION",l,v_pfunction,0,5)
 	
-
-	#PUser
-	l = ["ID", "Name", "DateOfBirth", "ProfilePicture", "University", "Profession"]
-	v_puser = low_case_elements(l)
-	v_puser[0] = 0
-	v_puser = poly_insert_query(sql_file,"PUSER",l,v_puser,0,5)
-
-
+	
 	#Publication
 	write_name(sql_file, "PUBLICATION")
 	l = ["ID","Link","User_ID","SubmitionDate"]
@@ -136,6 +152,7 @@ if __name__ == '__main__':
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[2] = v_puser[randint(0,4)][0]
+		tmp[3] = datetime.today().strftime('%d-%m-%Y')
 		insert_query(sql_file, "PUBLICATION", l, tmp)
 		v_publication.append(tmp)
 
@@ -150,18 +167,6 @@ if __name__ == '__main__':
 		tmp[0] = v_publication[randint(0,4)][0]
 		insert_query(sql_file, "PUB_AUTHOR", l, tmp)
 		v_pubauthor.append(tmp)
-
-	#Curator
-	write_name(sql_file, "CURATOR")
-	l = ["User_ID", "DateOfContract"]
-	v = low_case_elements(l)
-	v_curator = list()
-	v[0] = 0
-	for i in range(5):
-		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
-		tmp[0] = v_puser[randint(0,4)][0]
-		insert_query(sql_file, "CURATOR", l, tmp)
-		v_curator.append(tmp)
 
 	#Project
 	l = ["ID", "Description"]
@@ -187,7 +192,6 @@ if __name__ == '__main__':
 	l = ["P_AcessionID", "Disease_ICD10Code"]
 	v = low_case_elements(l)
 	v_causes = list()
-	v[0] = v[1] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_prot_entry[randint(0,4)][0]
@@ -199,8 +203,8 @@ if __name__ == '__main__':
 	write_name(sql_file,"HAS_FUNCTION")
 	l = ["P_AccessionID", "Function_ID"]
 	v = low_case_elements(l)
+	v[1] = 0
 	v_has_function = list()
-	v[0] = v[1] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_prot_entry[randint(0,4)][0]
@@ -214,7 +218,6 @@ if __name__ == '__main__':
 	l = ["P_AccessionID", "P2_AccessionID"]
 	v = low_case_elements(l)
 	v_interaction = list()
-	v[0] = v[1] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_prot_entry[randint(0,4)][0]
@@ -227,7 +230,7 @@ if __name__ == '__main__':
 	l = ["I_P_AccessionID","I_P2_AccessionID","Publication_ID"]
 	v = low_case_elements(l)
 	v_mention_interaction = list()
-	v[0] = v[1] = v[2] = 0
+	v[2] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_interaction[randint(0,4)][0]
@@ -242,13 +245,14 @@ if __name__ == '__main__':
 			"DateOfApproval"]
 	v = low_case_elements(l)
 	v_aproval_mention_interaction = list()
-	v[0] = v[1] = v[2] = v[3] = 0
+	v[0] = v[3] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_curator[randint(0,4)][0]
 		tmp[1] = v_mention_interaction[randint(0,4)][0]
 		tmp[2] = v_mention_interaction[randint(0,4)][1]
 		tmp[3] = v_mention_interaction[randint(0,4)][2]
+		tmp[4] = datetime.today().strftime('%d-%m-%Y')
 		insert_query(sql_file, "APROVAL_MENTION_INTERACTION",l,tmp)
 		v_aproval_mention_interaction.append(tmp)
 
@@ -257,7 +261,7 @@ if __name__ == '__main__':
 	l = ["P_AccessionID", "F_ID", "Publication_ID"]
 	v = low_case_elements(l)
 	v_mention_function = list()
-	v[0] = v[1] = v[2] = 0
+	v[1] = v[2] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_prot_entry[randint(0,4)][0]
@@ -270,13 +274,14 @@ if __name__ == '__main__':
 	l = ["Curator_ID","M_F_P_AccessionsID","M_I_F_ID","M_Publication_ID", "DateOfApproval"]
 	v = low_case_elements(l)
 	v_aproval_mention_function = list()
-	v[0] = v[1] = v[2] = v[3] = 0
+	v[0] = v[2] = v[3] = 0
 	for i in range(5):
 		tmp = [e + str(i) if not isinstance(e,int) else i for e in v ]
 		tmp[0] = v_curator[randint(0,4)][0]
 		tmp[1] = v_mention_function[randint(0,4)][0]
 		tmp[2] = v_mention_function[randint(0,4)][1]
 		tmp[3] = v_mention_function[randint(0,4)][2]
+		tmp[4] = datetime.today().strftime('%d-%m-%Y')
 		insert_query(sql_file, "APROVAL_MENTION_FUNCTION",l,tmp)
 		v_aproval_mention_function.append(tmp)
 
