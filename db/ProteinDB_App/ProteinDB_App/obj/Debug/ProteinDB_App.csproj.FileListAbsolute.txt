@@ -1,0 +1,14 @@
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.exe.config
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.exe
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.pdb
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csprojAssemblyReference.cache
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.Form1.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.Properties.Resources.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.UserPage.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csproj.GenerateResource.cache
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csproj.CoreCompileInputs.cache
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.exe
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.pdb
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProjectFilter.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilter.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilterResults.resources
