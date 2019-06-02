@@ -64,6 +64,8 @@
             this.listViewResults = new System.Windows.Forms.ListView();
             this.userCheckBox = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.universityTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -345,7 +347,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(462, 599);
+            this.button1.Location = new System.Drawing.Point(462, 671);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 37);
             this.button1.TabIndex = 28;
@@ -397,7 +399,7 @@
             // 
             this.listViewResults.Location = new System.Drawing.Point(582, 90);
             this.listViewResults.Name = "listViewResults";
-            this.listViewResults.Size = new System.Drawing.Size(578, 546);
+            this.listViewResults.Size = new System.Drawing.Size(702, 618);
             this.listViewResults.TabIndex = 34;
             this.listViewResults.UseCompatibleStateImageBehavior = false;
             this.listViewResults.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -417,18 +419,39 @@
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(973, 17);
+            this.button2.Location = new System.Drawing.Point(1109, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 37);
             this.button2.TabIndex = 36;
             this.button2.Text = "Create ";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label18.Location = new System.Drawing.Point(16, 593);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(88, 20);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "University:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // universityTextBox
+            // 
+            this.universityTextBox.Location = new System.Drawing.Point(31, 616);
+            this.universityTextBox.Name = "universityTextBox";
+            this.universityTextBox.Size = new System.Drawing.Size(538, 20);
+            this.universityTextBox.TabIndex = 38;
+            // 
             // Publication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 646);
+            this.ClientSize = new System.Drawing.Size(1296, 720);
+            this.Controls.Add(this.universityTextBox);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.userCheckBox);
             this.Controls.Add(this.listViewResults);
@@ -509,5 +532,7 @@
         private System.Windows.Forms.ListView listViewResults;
         private System.Windows.Forms.CheckBox userCheckBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox universityTextBox;
     }
 }

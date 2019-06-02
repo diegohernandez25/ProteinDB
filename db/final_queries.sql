@@ -75,7 +75,7 @@ GO
 --Select publications by mentions of proteins
 ALTER FUNCTION SearchPublicationByProteinID(@protId VARCHAR(20)) RETURNS Table
 AS
-	RETURN(SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
+	RETURN(SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
 	PROTEIN_ENTRY JOIN MENTION_PROTEIN ON PROTEIN_ENTRY.AccessionID = MENTION_PROTEIN.I_P_AccessionID
 	JOIN PUBLICATION ON MENTION_PROTEIN.Publication_ID = PUBLICATION.ID
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
@@ -87,7 +87,7 @@ GO
 --Seleciona publicações a partir de Protein Types
 ALTER FUNCTION SearchPublicationByProteinByType(@protType VARCHAR(20)) RETURNS Table
 AS
-	RETURN(SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
+	RETURN(SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link,  PUBLICATION.Title,PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
 	PROTEIN_ENTRY JOIN MENTION_PROTEIN ON PROTEIN_ENTRY.AccessionID = MENTION_PROTEIN.I_P_AccessionID
 	JOIN PUBLICATION ON MENTION_PROTEIN.Publication_ID = PUBLICATION.ID
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
@@ -96,120 +96,130 @@ GO
 
 --Procura por publicação da universidade
 ALTER FUNCTION SearchPublicationByUniversity(@uni VARCHAR(30)) RETURNS Table
-	RETURN (SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
+	RETURN (SELECT DISTINCT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
 	PROTEIN_ENTRY JOIN MENTION_PROTEIN ON PROTEIN_ENTRY.AccessionID = MENTION_PROTEIN.I_P_AccessionID
 	JOIN PUBLICATION ON MENTION_PROTEIN.Publication_ID = PUBLICATION.ID
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUSER.University LIKE CONCAT('%',@uni,'%'));
 
 
-
-
-
-  GO
-create FUNCTION filterPublication (@pubId INT, @title VARCHAR(300), @author VARCHAR(20)
-, @userName varchar(20), @userId INT, @initDate DATE,@finalDate DATE, @proteinID VARCHAR(20), @proteinType VARCHAR(40))
-	RETURNS @table TABLE (PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
-AS
-	BEGIN
-	INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT PUBLICATION.ID AS PubID,Link,Title,User_ID,Name,University,SubmitionDate
-			FROM PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID;
-
-		DECLARE @tempTable table(PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
-
-		IF(@title IS NOT NULL)
+	GO
+	ALTER FUNCTION filterPublication (@pubId INT, @title VARCHAR(300), @author VARCHAR(20)
+	, @userName varchar(20), @userId INT, @initDate DATE,@finalDate DATE, @proteinID VARCHAR(20), @proteinType VARCHAR(40), @university VARCHAR(30))
+		RETURNS @table TABLE (PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
+	AS
 		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+		INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT PUBLICATION.ID AS PubID,Link,Title,User_ID,Name,University,SubmitionDate
+				FROM PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID;
+
+			DECLARE @tempTable table(PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
+
+			IF(@title IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+						SELECT * FROM @tempTable
+						INTERSECT
+						SELECT * FROM getPublicationByTitle(@title);
+				DELETE FROM @tempTable
+			END
+			IF(@author IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+						SELECT * FROM @tempTable
+						INTERSECT
+						SELECT * FROM getPublicationByAuthor(@author);
+				DELETE FROM @tempTable
+
+			END
+
+			IF(@userName IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				INTERSECT
+				SELECT * FROM getPublicationByUserName(@userName);
+				DELETE FROM @tempTable
+			END
+			IF(@userId IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				INTERSECT
+				SELECT * FROM getPublicationByUserId(@userId);
+				DELETE FROM @tempTable
+			END
+			IF(@initDate IS NOT NULL)
+			BEGIN
+				IF(@finalDate IS NOT NULL)
+				BEGIN
+					INSERT @tempTable SELECT * FROM @table;
+					DELETE FROM @table;
+					INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
 					SELECT * FROM @tempTable
-					UNION
-					SELECT * FROM getPublicationByTitle(@title)
-			DELETE FROM @tempTable
-		END
-		IF(@author IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+					INTERSECT
+					SELECT * FROM SearchPublicationBetweenDate(@initDate, @finalDate);
+					DELETE FROM @tempTable
+				END
+				ELSE
+				BEGIN
+					INSERT @tempTable SELECT * FROM @table;
+					DELETE FROM @table;
+					INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
 					SELECT * FROM @tempTable
-					UNION
-					SELECT * FROM getPublicationByAuthor(@author)
-			DELETE FROM @tempTable
-
-		END
-
-		IF(@userName IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT * FROM @tempTable
-			UNION
-			SELECT * FROM getPublicationByUserName(@userName)
-			DELETE FROM @tempTable
-		END
-		IF(@userId IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT * FROM @tempTable
-			UNION
-			SELECT * FROM getPublicationByUserId(@userId)
-			DELETE FROM @tempTable
-		END
-		IF(@initDate IS NOT NULL)
-		BEGIN
+					INTERSECT
+					SELECT * FROM SearchPublicationGreaterDate(@initDate);
+					DELETE FROM @tempTable
+				END
+			END
 			IF(@finalDate IS NOT NULL)
 			BEGIN
 				INSERT @tempTable SELECT * FROM @table;
 				DELETE FROM @table;
 				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
 				SELECT * FROM @tempTable
-				UNION
-				SELECT * FROM SearchPublicationBetweenDate(@initDate, @finalDate)
+				INTERSECT
+				SELECT * FROM SearchPublicationLowerDate(@initDate);
 				DELETE FROM @tempTable
-			ELSE
-				NSERT @tempTable SELECT * FROM @table;
+			END
+			IF(@proteinID IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
 				DELETE FROM @table;
 				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
 				SELECT * FROM @tempTable
-				UNION
-				SELECT * FROM SearchPublicationGreaterDate(@initDate)
+				INTERSECT
+				SELECT * FROM SearchPublicationByProteinID(@proteinID);
 				DELETE FROM @tempTable
 			END
+			IF(@proteinType IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				INTERSECT
+				SELECT * FROM SearchPublicationByProteinByType(@proteinType);
+				DELETE FROM @tempTable
+			END
+			IF(@university IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				INTERSECT
+				SELECT * FROM SearchPublicationByUniversity(@university);
+				DELETE FROM @tempTable
+			END
+			RETURN
 		END
-		IF(@finalDate IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT * FROM @tempTable
-			UNION
-			SELECT * FROM SearchPublicationLowerDate(@initDate)
-			DELETE FROM @tempTable
-		END
-		IF(@proteinName IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT * FROM @tempTable
-			UNION
-			SELECT * FROM SearchPublicationByProteinID(@proteinName)
-			DELETE FROM @tempTable
-		END
-		IF(@proteinType IS NOT NULL)
-		BEGIN
-			INSERT @tempTable SELECT * FROM @table;
-			DELETE FROM @table;
-			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
-			SELECT * FROM @tempTable
-			UNION
-			SELECT * FROM SearchPublicationByProteinByType(@protType)
-			DELETE FROM @tempTable
-		END
-	END
-GO 
+	GO

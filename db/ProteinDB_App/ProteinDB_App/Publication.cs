@@ -172,25 +172,59 @@ namespace ProteinDB_App
 
         private void searchButton(object sender, EventArgs e)
         {
+            listViewResults.Items.Clear();
             string title = TitleTextBox.Text;
             string author = AuthorTextBox.Text;
-            string submittedByUser = SubmittedByUserTextBox.Text;
+            string submittedByUserName = null;
+            string submittedByUserId = null;
+            if (userCheckBox.Checked)
+            {   submittedByUserId = SubmittedByUserTextBox.Text;
+            }
+            else
+            {   submittedByUserName = SubmittedByUserTextBox.Text;
+            }
             string initialDate = InitialDataTextBox.Text;
             string finalDate = finalDateTextBox.Text;
+            string proteinID = null;
+            string proteinName = null;
+            if (ProteinsMentionsCheckBox.Checked)
+            {   proteinID = ProteinMentionsTextBox.Text;
+            }
+            else
+            {   proteinName = ProteinMentionsTextBox.Text;
+            }
+            string university = universityTextBox.Text;
             string proteinType = ProteinTypeTextBox.Text;
 
             Console.WriteLine("title:" + title);
-            if (title != null)
-            {
-                Console.WriteLine("command: " + "SELECT * FROM getPublicationByTitle(\'" + title + "\');");
-                SqlCommand cmdDIS = new SqlCommand("SELECT * FROM getPublicationByTitle(\'"+title+"\');", cn);
-                SqlDataReader readerDIS = cmdDIS.ExecuteReader();
-                while (readerDIS.Read())
-                {   Console.WriteLine("PubID: "+ readerDIS["PubID"].ToString());
-                    var item = new ListViewItem(new[] { readerDIS["PubID"].ToString(),  readerDIS["Link"].ToString(), readerDIS["Title"].ToString(), readerDIS["User_ID"].ToString(), readerDIS["Name"].ToString(), readerDIS["University"].ToString(), readerDIS["SubmitionDate"].ToString() });
-                    listViewResults.Items.Add(item);
-                    }
+            Console.WriteLine("author:" + author);
+            Console.WriteLine("submittedByUserName:" + submittedByUserName);
+            Console.WriteLine("submittedByUserID:" + submittedByUserId);
+            Console.WriteLine("initialDate:" + initialDate);
+            Console.WriteLine("finalDate:" + finalDate);
+            Console.WriteLine("poteinType:" + proteinType);
+            DateTime dDate;
+            
+            String tmpQuery = "SELECT * FROM filterPublication(" + (string.IsNullOrEmpty(author) ? "NUll" : author) +
+                ", " + (string.IsNullOrEmpty(title) ? "NUll": "'" + title + "'") + "," + (string.IsNullOrEmpty(author) ? "NUll": "'" + author + "'") +
+                "," + (string.IsNullOrEmpty(submittedByUserName) ? "NUll" : "'" + submittedByUserName + "'") +
+                "," + (string.IsNullOrEmpty(submittedByUserId) ? "NUll" : submittedByUserId) + 
+                "," + ((string.IsNullOrEmpty(initialDate) || !DateTime.TryParse(initialDate, out dDate)) ? "NUll" : "'" + initialDate + "'") + 
+                ", " + ((string.IsNullOrEmpty(finalDate) || !DateTime.TryParse(finalDate, out dDate)) ? "NUll": "'" + finalDate + "'") +
+                ", " + (string.IsNullOrEmpty(proteinID) ? "NUll" : "'" + proteinID + "'") +
+                ", " + (string.IsNullOrEmpty(proteinType) ? "NUll" : "'" + proteinType + "'") +
+                ", " + (string.IsNullOrEmpty(university) ? "NUll" : "'" + university + "'") + ");";
+            Console.WriteLine("tmpQuery: "+tmpQuery);
+            SqlCommand cmd = new SqlCommand(tmpQuery, cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {   Console.WriteLine("PubID: " + reader["PubID"].ToString());
+                var item = new ListViewItem(new[] { reader["PubID"].ToString(), reader["Link"].ToString(), reader["Title"].ToString(), reader["User_ID"].ToString(), reader["Name"].ToString(), reader["University"].ToString(), reader["SubmitionDate"].ToString() });
+                listViewResults.Items.Add(item);
             }
+            reader.Close();
+            Console.WriteLine("Command done!");
+
         }
 
         private void ProteinTypeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -249,6 +283,11 @@ namespace ProteinDB_App
         }
 
         private void Create_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
         {
 
         }
