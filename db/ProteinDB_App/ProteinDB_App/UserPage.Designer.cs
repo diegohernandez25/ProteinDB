@@ -31,20 +31,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nameTB = new System.Windows.Forms.TextBox();
+            this.dateTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.jobTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.uniTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.editBTN = new System.Windows.Forms.Button();
+            this.protBTN = new System.Windows.Forms.Button();
+            this.spBTN = new System.Windows.Forms.Button();
+            this.diseaseBTN = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.okBTN = new System.Windows.Forms.Button();
+            this.cancelBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,20 +79,20 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Name: ";
             // 
-            // textBox1
+            // nameTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(437, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 3;
+            this.nameTB.Location = new System.Drawing.Point(437, 76);
+            this.nameTB.Name = "nameTB";
+            this.nameTB.Size = new System.Drawing.Size(247, 20);
+            this.nameTB.TabIndex = 3;
             // 
-            // textBox2
+            // dateTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(475, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.dateTB.Location = new System.Drawing.Point(475, 126);
+            this.dateTB.Name = "dateTB";
+            this.dateTB.Size = new System.Drawing.Size(209, 20);
+            this.dateTB.TabIndex = 5;
+            this.dateTB.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -103,13 +105,13 @@
             this.label3.Text = "Date of Birth:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox3
+            // jobTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(423, 177);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.jobTB.Location = new System.Drawing.Point(423, 177);
+            this.jobTB.Name = "jobTB";
+            this.jobTB.Size = new System.Drawing.Size(261, 20);
+            this.jobTB.TabIndex = 7;
+            this.jobTB.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -122,12 +124,12 @@
             this.label4.Text = "Job: ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox4
+            // uniTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(462, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 20);
-            this.textBox4.TabIndex = 9;
+            this.uniTB.Location = new System.Drawing.Point(462, 223);
+            this.uniTB.Name = "uniTB";
+            this.uniTB.Size = new System.Drawing.Size(222, 20);
+            this.uniTB.TabIndex = 9;
             // 
             // label5
             // 
@@ -139,42 +141,44 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "University: ";
             // 
-            // button1
+            // editBTN
             // 
-            this.button1.Location = new System.Drawing.Point(564, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editBTN.Location = new System.Drawing.Point(564, 311);
+            this.editBTN.Name = "editBTN";
+            this.editBTN.Size = new System.Drawing.Size(120, 33);
+            this.editBTN.TabIndex = 10;
+            this.editBTN.Text = "Edit";
+            this.editBTN.UseVisualStyleBackColor = true;
+            this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
             // 
-            // button2
+            // protBTN
             // 
-            this.button2.Location = new System.Drawing.Point(-1, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 48);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.protBTN.Location = new System.Drawing.Point(-1, 20);
+            this.protBTN.Name = "protBTN";
+            this.protBTN.Size = new System.Drawing.Size(114, 48);
+            this.protBTN.TabIndex = 11;
+            this.protBTN.Text = "Protein Search";
+            this.protBTN.UseVisualStyleBackColor = true;
+            this.protBTN.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // spBTN
             // 
-            this.button3.Location = new System.Drawing.Point(-1, 74);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 48);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.spBTN.Location = new System.Drawing.Point(-1, 74);
+            this.spBTN.Name = "spBTN";
+            this.spBTN.Size = new System.Drawing.Size(114, 48);
+            this.spBTN.TabIndex = 12;
+            this.spBTN.Text = "Species Search";
+            this.spBTN.UseVisualStyleBackColor = true;
+            this.spBTN.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // diseaseBTN
             // 
-            this.button4.Location = new System.Drawing.Point(-1, 128);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 48);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.diseaseBTN.Location = new System.Drawing.Point(-1, 128);
+            this.diseaseBTN.Name = "diseaseBTN";
+            this.diseaseBTN.Size = new System.Drawing.Size(114, 48);
+            this.diseaseBTN.TabIndex = 13;
+            this.diseaseBTN.Text = "Disease Search";
+            this.diseaseBTN.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -203,25 +207,47 @@
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // okBTN
+            // 
+            this.okBTN.Location = new System.Drawing.Point(423, 311);
+            this.okBTN.Name = "okBTN";
+            this.okBTN.Size = new System.Drawing.Size(120, 33);
+            this.okBTN.TabIndex = 17;
+            this.okBTN.Text = "Ok";
+            this.okBTN.UseVisualStyleBackColor = true;
+            this.okBTN.Click += new System.EventHandler(this.okBTN_Click);
+            // 
+            // cancelBTN
+            // 
+            this.cancelBTN.Location = new System.Drawing.Point(564, 311);
+            this.cancelBTN.Name = "cancelBTN";
+            this.cancelBTN.Size = new System.Drawing.Size(120, 33);
+            this.cancelBTN.TabIndex = 18;
+            this.cancelBTN.Text = "Cancel";
+            this.cancelBTN.UseVisualStyleBackColor = true;
+            this.cancelBTN.Click += new System.EventHandler(this.cancelBTN_Click);
+            // 
             // UserPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 375);
+            this.Controls.Add(this.cancelBTN);
+            this.Controls.Add(this.okBTN);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.diseaseBTN);
+            this.Controls.Add(this.spBTN);
+            this.Controls.Add(this.protBTN);
+            this.Controls.Add(this.editBTN);
+            this.Controls.Add(this.uniTB);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.jobTB);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateTB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -239,19 +265,21 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nameTB;
+        private System.Windows.Forms.TextBox dateTB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox jobTB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox uniTB;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button editBTN;
+        private System.Windows.Forms.Button protBTN;
+        private System.Windows.Forms.Button spBTN;
+        private System.Windows.Forms.Button diseaseBTN;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button okBTN;
+        private System.Windows.Forms.Button cancelBTN;
     }
 }

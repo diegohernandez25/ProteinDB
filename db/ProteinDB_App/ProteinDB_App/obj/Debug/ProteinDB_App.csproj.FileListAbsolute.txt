@@ -12,3 +12,4 @@ C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\P
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProjectFilter.resources
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilter.resources
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilterResults.resources
+C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.SpeciesFilter.resources

@@ -71,6 +71,13 @@
     <Compile Include="ProteinFilterResults.Designer.cs">
       <DependentUpon>ProteinFilterResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpeciesFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeciesFilter.Designer.cs">
+      <DependentUpon>SpeciesFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="UserPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProteinFilterResults.resx">
       <DependentUpon>ProteinFilterResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesFilter.resx">
+      <DependentUpon>SpeciesFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPage.resx">
       <DependentUpon>UserPage.cs</DependentUpon>

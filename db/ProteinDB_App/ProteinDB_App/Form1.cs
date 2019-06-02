@@ -15,6 +15,7 @@ namespace ProteinDB_App
 {
     public partial class Form1 : Form
     {
+        private SqlConnection cn;
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +39,14 @@ namespace ProteinDB_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cn = getSGBDConnection();
+
+            if (!verifySGBDConnection())
+                return;
+            else
+                Console.WriteLine("connection exists");
+
+
 
         }
 
@@ -55,6 +64,29 @@ namespace ProteinDB_App
         {
             UserPage up = new UserPage(1,"User 1");
             up.ShowDialog();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private SqlConnection getSGBDConnection()
+        {
+            return new SqlConnection("data source= DESKTOP-I071S23;integrated security=true;initial catalog=ProteinDB");
+        }
+
+
+        private bool verifySGBDConnection()
+        {
+            if (cn == null)
+                cn = getSGBDConnection();
+
+            if (cn.State != ConnectionState.Open)
+                cn.Open();
+
+            return cn.State == ConnectionState.Open;
         }
     }
 }
