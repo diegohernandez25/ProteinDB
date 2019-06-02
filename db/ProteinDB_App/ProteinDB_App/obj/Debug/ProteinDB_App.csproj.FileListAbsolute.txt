@@ -13,3 +13,19 @@ C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\P
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilter.resources
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilterResults.resources
 C:\Users\Asus K56CB\Desktop\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.SpeciesFilter.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.exe.config
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.exe
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\bin\Debug\ProteinDB_App.pdb
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csprojAssemblyReference.cache
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.Form1.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProjectFilter.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.Properties.Resources.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilter.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.ProteinFilterResults.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.SpeciesFilter.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.UserPage.resources
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csproj.GenerateResource.cache
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.csproj.CoreCompileInputs.cache
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.exe
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.pdb
+C:\Users\diego\Documents\ECT\ProteinDB\gitlab\proteindb\db\ProteinDB_App\ProteinDB_App\obj\Debug\ProteinDB_App.Publication.resources

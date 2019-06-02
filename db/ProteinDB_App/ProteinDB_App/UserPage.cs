@@ -157,7 +157,7 @@ namespace ProteinDB_App
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= DESKTOP-I071S23;integrated security=true;initial catalog=ProteinDB");
+            return new SqlConnection("data source=LAPTOP-S1SHCMO0;integrated security=true;initial catalog=ProteinDB");
         }
 
 
@@ -172,7 +172,10 @@ namespace ProteinDB_App
             return cn.State == ConnectionState.Open;
         }
 
-
-
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Publication pubpage = new Publication();
+            pubpage.ShowDialog();
+        }
     }
 }

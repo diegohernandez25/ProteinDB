@@ -59,6 +59,7 @@
             this.typeCB.Name = "typeCB";
             this.typeCB.Size = new System.Drawing.Size(253, 21);
             this.typeCB.TabIndex = 1;
+            this.typeCB.SelectedIndexChanged += new System.EventHandler(this.typeCB_SelectedIndexChanged);
             // 
             // label1
             // 

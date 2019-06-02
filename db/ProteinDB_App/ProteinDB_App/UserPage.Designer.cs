@@ -42,7 +42,7 @@
             this.protBTN = new System.Windows.Forms.Button();
             this.spBTN = new System.Windows.Forms.Button();
             this.diseaseBTN = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Publications = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.okBTN = new System.Windows.Forms.Button();
@@ -180,14 +180,15 @@
             this.diseaseBTN.Text = "Disease Search";
             this.diseaseBTN.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // Publications
             // 
-            this.button5.Location = new System.Drawing.Point(-1, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 48);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Publications.Location = new System.Drawing.Point(-1, 182);
+            this.Publications.Name = "Publications";
+            this.Publications.Size = new System.Drawing.Size(114, 48);
+            this.Publications.TabIndex = 14;
+            this.Publications.Text = "Publications";
+            this.Publications.UseVisualStyleBackColor = true;
+            this.Publications.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -236,7 +237,7 @@
             this.Controls.Add(this.okBTN);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Publications);
             this.Controls.Add(this.diseaseBTN);
             this.Controls.Add(this.spBTN);
             this.Controls.Add(this.protBTN);
@@ -276,7 +277,7 @@
         private System.Windows.Forms.Button protBTN;
         private System.Windows.Forms.Button spBTN;
         private System.Windows.Forms.Button diseaseBTN;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Publications;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button okBTN;
