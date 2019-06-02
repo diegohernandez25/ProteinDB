@@ -2,7 +2,7 @@
 GO
 ALTER FUNCTION getPublicationByTitle(@title VARCHAR(300)) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.TITLE LIKE CONCAT('%',@title,'%'));
 
@@ -15,7 +15,7 @@ GO
 GO
 ALTER FUNCTION getPublicationByID(@id INT) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.ID = @id);
 GO
@@ -25,7 +25,7 @@ SELECT * FROM getPublicationByID(1108690);
 GO
 ALTER FUNCTION getPublicationByAuthor(@author VARCHAR(50)) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUB_AUTHOR
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUB_AUTHOR
 	JOIN PUBLICATION ON PUB_AUTHOR.Publication_ID = PUBLICATION.ID
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUB_AUTHOR.AuthorName LIKE CONCAT('%',@author,'%'));
@@ -35,14 +35,14 @@ GO
 
 ALTER FUNCTION getPublicationByUserID(@usrId INT) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
 	PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.User_ID = @usrId);
 GO
 
 ALTER FUNCTION getPublicationByUserName(@usrName VARCHAR(30)) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate  FROM
 	PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUSER.Name LIKE CONCAT('%',@usrName,'%'));
 GO
@@ -51,21 +51,21 @@ GO
 -- Search publication by date
 ALTER FUNCTION SearchPublicationBetweenDate(@initDate DATE, @finalDate DATE) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate
 	FROM PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.SubmitionDate BETWEEN  @initDate AND  @finalDate);
 GO
 
 ALTER FUNCTION SearchPublicationGreaterDate(@initDate DATE) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.SubmitionDate >= CONVERT(datetime, @initDate));
 GO
 
 ALTER FUNCTION SearchPublicationLowerDate(@finalDate DATE) RETURNS Table
 AS
-	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
+	RETURN(SELECT PUBLICATION.ID AS PubID, PUBLICATION.Link, PUBLICATION.Title, PUBLICATION.User_ID, PUSER.Name, PUSER.University, PUBLICATION.SubmitionDate FROM PUBLICATION
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUBLICATION.SubmitionDate <= CONVERT(datetime, @finalDate));
 GO
@@ -101,3 +101,115 @@ ALTER FUNCTION SearchPublicationByUniversity(@uni VARCHAR(30)) RETURNS Table
 	JOIN PUBLICATION ON MENTION_PROTEIN.Publication_ID = PUBLICATION.ID
 	JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID
 	WHERE PUSER.University LIKE CONCAT('%',@uni,'%'));
+
+
+
+
+
+  GO
+create FUNCTION filterPublication (@pubId INT, @title VARCHAR(300), @author VARCHAR(20)
+, @userName varchar(20), @userId INT, @initDate DATE,@finalDate DATE, @proteinID VARCHAR(20), @proteinType VARCHAR(40))
+	RETURNS @table TABLE (PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
+AS
+	BEGIN
+	INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT PUBLICATION.ID AS PubID,Link,Title,User_ID,Name,University,SubmitionDate
+			FROM PUBLICATION JOIN PUSER ON PUBLICATION.User_ID = PUSER.ID;
+
+		DECLARE @tempTable table(PubID INT,Link VARCHAR(50),Title VARCHAR(300),User_ID INT,Name VARCHAR(30),University VARCHAR(30),SubmitionDate DATE)
+
+		IF(@title IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+					SELECT * FROM @tempTable
+					UNION
+					SELECT * FROM getPublicationByTitle(@title)
+			DELETE FROM @tempTable
+		END
+		IF(@author IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+					SELECT * FROM @tempTable
+					UNION
+					SELECT * FROM getPublicationByAuthor(@author)
+			DELETE FROM @tempTable
+
+		END
+
+		IF(@userName IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT * FROM @tempTable
+			UNION
+			SELECT * FROM getPublicationByUserName(@userName)
+			DELETE FROM @tempTable
+		END
+		IF(@userId IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT * FROM @tempTable
+			UNION
+			SELECT * FROM getPublicationByUserId(@userId)
+			DELETE FROM @tempTable
+		END
+		IF(@initDate IS NOT NULL)
+		BEGIN
+			IF(@finalDate IS NOT NULL)
+			BEGIN
+				INSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				UNION
+				SELECT * FROM SearchPublicationBetweenDate(@initDate, @finalDate)
+				DELETE FROM @tempTable
+			ELSE
+				NSERT @tempTable SELECT * FROM @table;
+				DELETE FROM @table;
+				INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+				SELECT * FROM @tempTable
+				UNION
+				SELECT * FROM SearchPublicationGreaterDate(@initDate)
+				DELETE FROM @tempTable
+			END
+		END
+		IF(@finalDate IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT * FROM @tempTable
+			UNION
+			SELECT * FROM SearchPublicationLowerDate(@initDate)
+			DELETE FROM @tempTable
+		END
+		IF(@proteinName IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT * FROM @tempTable
+			UNION
+			SELECT * FROM SearchPublicationByProteinID(@proteinName)
+			DELETE FROM @tempTable
+		END
+		IF(@proteinType IS NOT NULL)
+		BEGIN
+			INSERT @tempTable SELECT * FROM @table;
+			DELETE FROM @table;
+			INSERT @table (PubID,Link,Title,User_ID,Name,University,SubmitionDate)
+			SELECT * FROM @tempTable
+			UNION
+			SELECT * FROM SearchPublicationByProteinByType(@protType)
+			DELETE FROM @tempTable
+		END
+	END
+GO 
