@@ -4,10 +4,18 @@ namespace ProteinDB_App
 {
     public class User
     {
+        private int _id;
         private String _name;
         private String _dateOfBirth;
         private String _job;
         private String _university;
+
+
+        public int ID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         public String Name
         {
@@ -44,6 +52,11 @@ namespace ProteinDB_App
             this.DateOfBirth = DateOfBirth;
             this.Job = Job;
             this.University = University;
+        }
+
+        public override String ToString()
+        {
+            return _id + "-" + _name;
         }
 
 

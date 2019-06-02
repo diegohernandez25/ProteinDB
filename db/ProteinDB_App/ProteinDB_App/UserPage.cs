@@ -23,7 +23,6 @@ namespace ProteinDB_App
 
             currentUser = userID;
 
-            label1.Text = "userName";
             nameTB.Enabled=false;
             dateTB.Enabled = false;
             jobTB.Enabled = false;
@@ -41,18 +40,20 @@ namespace ProteinDB_App
             else
                 Console.WriteLine("connection exists");
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PUSER WHERE ID=1", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM PUSER WHERE ID="+ currentUser, cn);
             SqlDataReader reader = cmd.ExecuteReader();
             
 
             while (reader.Read())
             {
                 User U = new User();
+                U.ID = Convert.ToInt32(reader["ID"]);
                 U.Name= reader["Name"].ToString();
                 U.DateOfBirth= reader["DateBirth"].ToString();
                 U.Job = reader["Profession"].ToString();
                 U.University = reader["University"].ToString();
 
+                label1.Text = U.ID.ToString();
                 nameTB.Text = U.Name;
                 dateTB.Text = U.DateOfBirth;
                 jobTB.Text = U.Job;
